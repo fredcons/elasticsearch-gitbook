@@ -1,7 +1,7 @@
 # Summary
 
-* [Introduction](README.md)
-* [Setup](setup/README.md)
+* [Introduction à ElasticSearch](README.md)
+* [Installation](setup/README.md)
 * [Configuration](configuration/README.md)
 * [Gestion de schéma](gestion_de_schema/README.md)
 * [Recherche basique](recherche_basique/README.md)

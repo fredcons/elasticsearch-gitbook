@@ -1,23 +1,4 @@
 {
-    "plugins": [
-        "autocover"
-    ],
-    "pluginsConfig": {
-        "autocover": {
-            "title": "Introduction à Elasticseach",
-            "author": "Frederic Cons",
-            "font": {
-                "size": null,
-                "family": "Impact",
-                "color": "#FFF"
-            },
-            "size": {
-                "w": 1800,
-                "h": 2360
-            },
-            "background": {
-                "color": "#09F"
-            }
-        }
-    }
+    "plugins": [],
+    "pluginsConfig": {}
 }
