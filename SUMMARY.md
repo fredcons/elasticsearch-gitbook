@@ -8,4 +8,5 @@
 * [Recherche avancée](recherche_avancee/README.md)
 * [Aggregations](aggregations/README.md)
 * [Pour aller plus loin](pour_aller_plus_loin/README.md)
+* [Solutions](solutions/README.md)
 
