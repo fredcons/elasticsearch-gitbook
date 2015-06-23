@@ -175,7 +175,7 @@ Cela pourrait donner :
 Il existe un endpoint spécial pour tester le résultat d'un analyzer :
 
 ```
-
+TODO
 ```
 
 ### Exercice 3.9
@@ -183,6 +183,252 @@ Il existe un endpoint spécial pour tester le résultat d'un analyzer :
 Il faut le définir comme *not_analyzed* : il sera conservé tel quel.
 
 
+### Exercice 5.1
+
+Il n'y pas de requête ou filtre à réaliser : on va donc utiliser la requête `match_all` qui ramène tous les résultats.
+Pour obtenir les plus anciennes, on ne dispose pas d'une date de création, mais de trois champs founded_year / founded_month / founded_day sur lesquels on va trier par ordre ascendant.
+
+```
+curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+  "query" : {
+    "match_all" : {}
+  },
+  "fields" : [ "name" ],
+  "sort" : [
+    { "founded_year" : { "order" : "asc" }},
+    { "founded_month" : { "order" : "asc" }},
+    { "founded_day" : { "order" : "asc" }}
+  ],
+  "size": 10
+}'
+```
+
+Ce qui permet de voir que la qualité des dates n'est pas là...
+
+On peut donc filter les sociétés créées après 1990 :
+
+```
+curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+  "query" : {
+    "filtered": {
+      "query": {
+        "match_all": {  }
+      },
+      "filter": {
+        "range": { "founded_year": { "gte": 1990 }}
+      }
+    }
+  },
+  "fields" : [ "name" ],
+  "sort" : [
+    { "founded_year" : { "order" : "asc" }},
+    { "founded_month" : { "order" : "asc" }},
+    { "founded_day" : { "order" : "asc" }}
+  ],
+  "size": 10
+}'
+```
+
+### Exercice 5.2
+
+On va utiliser la requête `multi_match` qui permet d'exécuter une requête sur plusieurs champs :
+
+```
+curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+  "query" : {
+    "multi_match" : {
+      "query":    "innovation",
+      "fields": [ "name", "tag_list" ]
+    }
+  },
+  "fields" : [ "name", "tag_list" ],
+  "size": 10
+}'
+```
+
+On voit alors que le 1er résultat est :
+
+```
+{
+  "_index" : "companies_db",
+  "_type" : "companies",
+  "_id" : "AU4gQEgoNbHfJKgC88Ff",
+  "_score" : 7.9127636,
+  "fields" : {
+    "name" : [ "Brightidea" ],
+    "tag_list" : [ "innovation" ]
+  }
+}
+```
+
+On peut influer sur le scoring en favorisant l'un ou l'autre champ d'un multimatch :
+
+```
+curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+  "query" : {
+    "multi_match" : {
+      "query":    "innovation",
+      "fields": [ "name^1.2", "tag_list" ]
+    }
+  },
+  "fields" : [ "name", "tag_list" ],
+  "size": 10
+}'
+```
+
+Le 1er résultat sera alors :
+
+```
+ {
+  "_index" : "companies_db",
+  "_type" : "companies",
+  "_id" : "AU4gQEgMNbHfJKgC86Rs",
+  "_score" : 6.8977776,
+  "fields" : {
+    "name" : [ "CVON Innovation" ],
+    "tag_list" : [ "patent, portfolio, mobile, marketing, advertisement" ]
+  }
+}
+```
+Le résultat "Brightidea" étant rélégué plus loin.
+
+### Exercice 5.3
+
+On n'a pas ici besoin de scoring: on va donc utiliser des filtres.
+Par ailleurs, il faudra filtrer à la fois sur le montant de l'IPO et sur sa currency, à travers l'utilisation d'un filtre `bool`.
+On notera qu'on peut naviguer sur un sous-objet (ipo) sans configuration particulière.
+
+```
+curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+  "query" : {
+    "filtered": {
+      "query": {
+        "match_all": {  }
+      },
+      "filter": {
+        "bool": {
+          "must" : [
+            { "range": { "ipo.valuation_amount": { "gte": 1000000 } } },
+            { "term" : { "ipo.valuation_currency_code" : "USD" } }
+          ]
+        }
+      }
+    }
+  },
+  "sort" : [
+    { "ipo.valuation_amount" : { "order" : "desc" }}
+  ],
+  "fields" : [ "name", "ipo.valuation_amount", "ipo.valuation_currency_code" ],
+  "size": 10
+}
+'
+```
+
+
+### Exercice 5.4
+
+Les adresses des sociétés se trouvent dans le champ nested 'locations'. La notion de champ nested permet de gérer des collections d'objets embarqués dans l'objet principal.
+Il faut pour les accèder utiliser un nested filter (ou une nested query selon l'usage) :
+
+```
+curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+  "query" : {
+    "filtered" : {
+      "query" : {
+        "match" : { "tag_list" : "video"}
+      },
+      "filter" : {
+        "nested" : {
+          "path" : "offices",
+          "filter" : {
+            "term" : { "offices.state_code.raw" : "CA"}
+          }
+        }
+      }
+    }
+  },
+  "fields" : [ "name", "tag_list", "offices.address1", "offices.city"],
+  "size": 50
+}'
+```
+
+#### Exercice 6.1
+
+Il existe deux agrégations pour des mesures statistiques : `stats` et `extended_stats`. `extended_stats` permet d'obtenir des mesures supplémentaires (variance par exemple).
+Pour les percentiles, il va falloir une deuxième agrégation nommée `percentiles`
+
+```
+curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+  "size" : 0,
+  "aggs" : {
+    "employees_stats" : {
+      "extended_stats" : { "field" : "number_of_employees" }
+    },
+    "employees_percentiles" : {
+      "percentiles" : {
+         "field" : "number_of_employees",
+         "percents" : [1, 5, 25, 50, 75, 95, 99, 99.9]
+      }
+    }
+  }
+}'
+```
+
+#### Exercice 6.2
+
+On va utiliser `histogram` en spécifiant un interval de 1
+(note : si on avait un champ date correctement formatté, on pourrait utiliser un `date_histogram`
+
+```
+curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+  "size" : 0,
+  "aggs" : {
+    "ipo_year" : {
+      "histogram" : {
+        "field" : "ipo.pub_year",
+        "interval" : 1
+      }
+    }
+  }
+}'
+```
+
+On peut aussi exécuter cette requête avec un intervalle de 10 pour voir les IPO par décennie.
+
+#### Exercice 6.3
+
+Il va falloir imbriquer des agrégations : d'abord agréger via des `terms` sur la `founded_year` (en triant par date), puis pour chaque date agréger via des `terms` sur `tag_list` (en laissant le tri par défaut par valeur décroissante, et en limitant à cinq valeurs).
+On va réaliser cela en imbriquant des éléments `aggs`
+
+```
+curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+  "size" : 0,
+  "query" : {
+    "filtered": {
+       "filter": {
+        "range": { "founded_year": { "gte": 2000 }, "founded_year": { "lte": 2015 }}
+      }
+    }
+  },
+  "aggs" : {
+    "founded_year" : {
+      "terms" : {
+        "field" : "founded_year",
+        "order" : { "_term" : "asc" },
+        "size" : 30
+      },
+      "aggs" : {
+        "top_tags" : {
+          "terms" : {
+            "field" : "tag_list",
+            "size" : 5
+          }
+        }
+      }
+    }
+  }
+}'
+```
 
 
 

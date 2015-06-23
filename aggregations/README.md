@@ -1,19 +1,125 @@
-# Aggregations
+# Agrégations
+
+Outre sa fonction de moteur de recherche, Elasticsearch offre des fonctionnalités statistiques assez poussées : à travers son système d'agrégations, il est possible d'explorer les données à travers des métriques, ou d'offrir à un utilisateur des facettes de navigation sur un jeu de données.
+
+Il est à noter que ce système d'agrégation peut être utilisé seul, ou en combinaison avec une recherche textuelle ou tout autre query.
 
 ## Les concepts
 
-## Obtenir des statistiques
+TODO
 
-Référencer min / max / avg
+## Structure d'une agrégation
 
-## Compter des valeurs distinctes
+Une agrégation se définit dans un document JSON similaire à celui d'une requête.
 
-## Obtenir un histogramme numérique ou temporel
+Voici un exemple d'agrégation multi-bucket : compter le nombre de startups pour chaque tag :
 
-## A noter également
+```
+curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+  "size" : 0,
+  "aggs" : {
+    "tags" : {
+      "terms" : {
+        "field" : "tag_list"
+      }
+    }
+  }
+}'
+```
 
-### Les données geographiques
+Le "size: 0" permet de ne pas afficher les résultats de la requête implicite (un `match_all`).
+On obtient un résultat avec pour chacun des 10 termes les plus courants (nombre et ordre par défaut) le nombre d'entreprises correspondant.
 
-### Les percentiles
+```
+{
+  "took" : 29,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 18794,
+    "max_score" : 0.0,
+    "hits" : [ ]
+  },
+  "aggregations" : {
+    "tags" : {
+      "doc_count_error_upper_bound" : 103,
+      "sum_other_doc_count" : 60600,
+      "buckets" : [ {
+        "key" : "mobile",
+        "doc_count" : 522
+      }, {
+        "key" : "video",
+        "doc_count" : 373
+      }, {
+        "key" : "software",
+        "doc_count" : 342
+      }, {
+        "key" : "social-network",
+        "doc_count" : 336
+      }, {
+        "key" : "saas",
+        "doc_count" : 327
+      }, {
+        "key" : "advertising",
+        "doc_count" : 319
+      }, {
+        "key" : "social-networking",
+        "doc_count" : 294
+      }, {
+        "key" : "search",
+        "doc_count" : 289
+      }, {
+        "key" : "social",
+        "doc_count" : 283
+      }, {
+        "key" : "music",
+        "doc_count" : 279
+      } ]
+    }
+  }
+}
+```
 
-### Les scripts
+On peut également exécuter cette agrégation dans le contexte d'une requête.
+Exemple: le top 10 des tags pour les startups fondées en 2012
+
+```
+curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+  "size" : 0,
+  "query" : {
+    "filtered" : {
+      "filter" : {
+        "term" : { "founded_year" : 2011 }
+      }
+    }
+  },
+  "aggs" : {
+    "tags" : {
+      "terms" : {
+        "field" : "tag_list"
+      }
+    }
+  }
+}'
+```
+
+## Exercices
+
+Afin de répondre à ces questions, on pourra se baser sur [le guide des agrégations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) et les pages filles.
+
+#### Exercice 6.1
+
+Obtenir des statistiques sur le champ `number_of_employees` : min, max avg, et les percentiles 1, 25, 50, 75, 95, 99, 99.9
+
+#### Exercice 6.2
+
+Obtenir un histogramme du nombre d'IPO par année (champ `ipo.pub_year`), puis par décennie.
+
+#### Exercice 6.3
+
+Obtenir pour les entreprises fondéees entre 2000 et 2010 (`founded_year`) les 5 tags (`tag_list`) les plus utilisés pour chaque année
+

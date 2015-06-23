@@ -1,7 +1,7 @@
 # Configuration
 
 La VM est installée, mais aucun service n'est démarré.
-Après avoir exécuté un "vagrant ssh", on va passer root, et démarrer ElasticSearch
+Après avoir exécuté un `vagrant ssh`, on va passer root, et démarrer Elasticsearch
 
 ## Contenu du package
 

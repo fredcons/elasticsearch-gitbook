@@ -2,7 +2,7 @@
 
 ## Comparaison avec une base de données
 
-Les système d'indexation tels ElasticSearch, s'ils sont différents des bases de données dans leur usage, présentent quelques similitudes dans leur organisation des données.
+Les système d'indexation tels Elasticsearch, s'ils sont différents des bases de données dans leur usage, présentent quelques similitudes dans leur organisation des données.
 
 Dans une base de données, une *base* contient des *tables*, qui contiennent des *lignes*, qui elles-mêmes sont composées de *colonnes*.
 
@@ -23,9 +23,9 @@ Pour indexer un document, on va donc devoir :
 - modéliser le document sous forme de JSON , et le fournir à ElasticSearch
 
 ES va ensuite enrichir ce document avec des métadonnées :
-- _id va être un identifiant unique généré par ES
-- _version va indiquer le nombre de modifications effectuées sur ce document
-- les champs _index et _type vont refléter les choix faits à l'indexation
+- `_id` va être un identifiant unique généré par ES
+- `_version` va indiquer le nombre de modifications effectuées sur ce document
+- les champs `_index` et `_type` vont refléter les choix faits à l'indexation
 
 
 ## Quelques examples d'indexation
@@ -53,7 +53,7 @@ Essayons d'abord d'indexer un document :
 
 
 
-Pour les exercices suivants, on pourra s'appuyer sur http://www.elastic.co/guide/en/elasticsearch/guide/current/data-in-data-out.html.
+Pour les exercices suivants, on pourra s'appuyer sur [cette page](http://www.elastic.co/guide/en/elasticsearch/guide/current/data-in-data-out.html).
 
 
 #### Exercice 3.1 :
@@ -79,7 +79,6 @@ Pour les exercices suivants, on pourra s'appuyer sur http://www.elastic.co/guide
 #### Exercice 3.5 :
 
 - Comment supprimer un document ?
-
 
 
 ## Comprendre le mapping
@@ -130,7 +129,7 @@ Les enjeux principaux lorsque on définit un champ sont les suivants :
 - quelle est la structure de l'objet stocké ? Au delà des types standards JSON (string, boolean, int...), ES peut également gérer des tableaux de ces types, voire utiliser des "nested objects" pour des structures plus complexes.
 
 
-Pour les exercices suivants, on pourra s'appuyer sur http://www.elastic.co/guide/en/elasticsearch/guide/current/mapping-analysis.html.
+Pour les exercices suivants, on pourra s'appuyer sur [le guide du mapping](http://www.elastic.co/guide/en/elasticsearch/guide/current/mapping-analysis.html).
 
 #### Exercice 3.6 :
 
@@ -148,7 +147,6 @@ Pour les exercices suivants, on pourra s'appuyer sur http://www.elastic.co/guide
 
 - J'ai dans mon mapping un champ "code" correspondant à un code produit, sur lequel réaliser une recherche exacte : comment le définir ?
 - J'ai dans mon mapping un champ numérique "count" utilisé pour trier, mais jamais utilisé : comment le définir ?
-- Bonus :
 
 
 
