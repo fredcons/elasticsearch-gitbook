@@ -3,18 +3,20 @@
 
 ## Initialisation des données
 
-On va réaliser un import d'un [jeu de données représentant un ensemble de startups](http://jsonstudio.com/wp-content/uploads/2014/02/companies.zip)(il s'agit d'un export de crunchbase).
+On va réaliser un import d'un [jeu de données représentant un ensemble de startups](http://jsonstudio.com/wp-content/uploads/2014/02/companies.zip) (il s'agit d'un export de crunchbase).
 
 On va donc créer le schéma :
 
 ```
-curl -XPUT http://localhost:9200/companies_db --data-binary @provisioning/files/mappings.json
+curl -XPUT http://localhost:9200/companies_db \
+    --data-binary @/etc/crunchbase/mappings.json
 ```
 
 Puis utiliser la bulk api d'ES pour importer les données :
 
 ```
-curl -XPUT http://localhost:9200/companies_db/companies/_bulk --data-binary @provisioning/files/companies.bulk.json
+curl -XPUT http://localhost:9200/companies_db/companies/_bulk \
+     --data-binary @/etc/crunchbase/companies.bulk.json
 ```
 
 On vérifie le nombre de documents dans l'index :
