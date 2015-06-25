@@ -4,7 +4,7 @@ Cette introduction n'a fait que présenter les concepts centraux d'Elasticsearch
 
 Mais Elasticsearch est un produit extrêmement riche et complexe : vous trouverez ci-dessous différents concepts et features à creuser pour aller plus loin.
 
-Notons que la documentation d'Elasticsearhc se découpe en :
+Notons que la documentation d'Elasticsearch se découpe en :
 - une [documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html), qui expose les différentes briques et leur paramétrage
 - un [guide](https://www.elastic.co/guide/en/elasticsearch/guide/master/index.html) qui propose une approche plus narrative (version HTML d'un livre publié chez O'Reilly).
 Les liens ci-dessous sont issus de ces deux sources.
