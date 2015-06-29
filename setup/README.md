@@ -26,6 +26,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.network "forwarded_port", guest: 9200, host: 9200
   config.vm.network "forwarded_port", guest: 5601, host: 5601
+  config.vm.provider "virtualbox" do |vb|
+    vb.customize ["modifyvm", :id, "--cpus", "2"]
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
+  end
 end
 EOT
 vagrant up
