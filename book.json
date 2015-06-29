@@ -1,5 +1,9 @@
 {
     "language": "fr",
-    "plugins": [],
-    "pluginsConfig": {}
+    "author" : "Fred Cons",
+    "plugins": [ "autocover" ],
+    "pluginsConfig": {
+      "autocover": {
+      }
+    }
 }
