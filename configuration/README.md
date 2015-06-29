@@ -111,7 +111,8 @@ Voilà, le service est démarré, et on peut le constater en interrogeant le por
 
 L'url racine nous donne donc des informations de base sur le serveur.
 
-Toutes les actions que nous allons réaliser pendant ce hands-on utiliseront l'API HTTP. La plupart des langages possèdent un SDK pour intégrer l'usage d'ElasticSearch dans du code client, mais tout est réalisable par HTTP : par souci de simplification, nous allons donc nous baser sur ce mode de communication.
+Toutes les actions que nous allons réaliser pendant ce hands-on utiliseront l'API HTTP.  
+La plupart des langages possèdent un SDK pour intégrer l'usage d'ElasticSearch dans du code client, mais tout est réalisable par HTTP : par souci de simplification, nous allons donc nous baser sur ce mode de communication.
 
 On peut aussi noter que le démarrage d'ES a créé un fichier de log, dans /var/log/elasticsearch/elasticsearch.log :
 
@@ -179,7 +180,7 @@ On a donc disponibles dans la VM :
 
 Plus récemment, ES a développé son propre plugin d'administration, Marvel, produit payant pour la production, mais gratuit sur des machines de développement. Il est disponible sur http://localhost:9200/_plugin/marvel/.
 
-On notera que le port 9200 de la VM est disponible sur la machine hôte : on peut donc utiliser ces plugins dans son navigateur, et toutes les commandes curl à venir seront exploitables depuis la machine hôte.
+On notera que le port 9200 de la VM est rendu disponible sur la machine hôte : on peut donc utiliser ces plugins dans son navigateur, et toutes les commandes curl à venir seront exploitables depuis la machine hôte.
 
 
 
