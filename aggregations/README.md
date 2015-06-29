@@ -2,11 +2,15 @@
 
 Outre sa fonction de moteur de recherche, Elasticsearch offre des fonctionnalités statistiques assez poussées : à travers son système d'agrégations, il est possible d'explorer les données à travers des métriques, ou d'offrir à un utilisateur des facettes de navigation sur un jeu de données.
 
-Il est à noter que ce système d'agrégation peut être utilisé seul, ou en combinaison avec une recherche textuelle ou tout autre query.
 
 ## Les concepts
 
-TODO
+Une agrégation se définit par : 
+- un ou plusieurs "buckets" : ce sont les "catégories" dans lequelles on va ranger les résultats. Un type d'agrégation peut avoir un bucket (ex : `stats`) ou plusieurs (ex : `terms`).
+- une métrique obtenue à partir des résultats de chaque bucket, par exemple leur nombre. 
+
+Il est à noter que ce système d'agrégation peut être utilisé seul, ou en combinaison avec une recherche textuelle ou toute autre query.  
+Par ailleurs, on peut demander plusieurs agrégations dans une seule requête, ou des agrégations hiérarchiques (c'est-à-dire imbriquées les une dans les autres).
 
 ## Structure d'une agrégation
 
@@ -83,6 +87,8 @@ On obtient un résultat avec pour chacun des 10 termes les plus courants (nombre
   }
 }
 ```
+
+Ici, les "buckets" sont donc chacun des éléments "key", et la métrique est le "doc_count" associé.
 
 On peut également exécuter cette agrégation dans le contexte d'une requête.
 Exemple: le top 10 des tags pour les startups fondées en 2012
