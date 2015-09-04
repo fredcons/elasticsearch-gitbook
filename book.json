@@ -1,9 +1,21 @@
 {
     "language": "fr",
-    "author" : "Fred Cons",
+    "author" : "Frédéric Cons",
     "plugins": [ "autocover" ],
     "pluginsConfig": {
       "autocover": {
+        "font": {
+            "size": null,
+            "color": "#000"
+        },
+        "size": {
+            "w": 1800,
+            "h": 2360
+        },
+        "background": {
+            "color": "#FFF"
+       }
+
       }
     }
 }

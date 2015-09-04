@@ -1,6 +1,6 @@
 # Installation
 
-Cette formation va s'appuyer sur une machine virtuelle préconfigurée
+Cette formation va s'appuyer sur une machine virtuelle préconfigurée.
 
 ## Prérequis
 
@@ -18,7 +18,7 @@ Il est possible de suivre le mode opératoire décrit sur ce repository pour lan
 Voilà comment initialiser la VM cible en utilisant cette box pré-packagée :
 
 ```
-mkdir es-handson && cd es-hands-on
+mkdir es-handson && cd es-handson
 cat <<EOT >> Vagrantfile
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|

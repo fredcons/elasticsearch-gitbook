@@ -200,7 +200,7 @@ Exemple de recherche de société dont ne nom est 'Twitter' :
 curl -XGET 'http://localhost:9200/companies_db/companies/_search?q=name:Twitter&pretty'
 ```
 
-Cetet recherche propose une syntaxe qui permet d'effectuer des OR/AND sur un ou plusierus champs : on en trouvera la description [ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax).
+Ce système de recherche propose une syntaxe qui permet d'effectuer des OR/AND sur un ou plusieurs champs : on en trouvera la description [ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax).
 
 On trouvera également plus de détails sur [cette page](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html) concernant le paramètrage de l'URI search.
 
@@ -214,7 +214,7 @@ Cette requête sera composée :
 - d'une query principale, elle-même composée de sous-queries et filtres.
 - de paramètres de sélection : nombre d'éléments souhaités, position de départ, tri, champs souhaités, etc...
 
-Les queries consistent à effectuer une recherche sur un champ, et à évaluer la pertinence d'un document par rapport à cette recherche, qui se traduira donc par un score.  
+Les queries consistent à effectuer une recherche sur un ou plusieurs champs, et à évaluer la pertinence d'un document par rapport à cette recherche, pertinence qui se traduira donc par un score.  
 Les filtres permettent de réduire le champ de la recherche, mais ne contribuent pas au score. Les filtres étant rapides et cachés, ils sont à prescrire pour toute recherche ne nécessitant pas de score.
 
 Voci un exemple de requête simple :
@@ -285,7 +285,7 @@ Cette réponse contient donc :
 ## Exercices
 
 Pour les questions suivantes, on pourra s'appuyer sur :
-- [le guide la recherche](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html) et les pages filles
+- [le guide de la recherche](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html) et ses pages filles
 - [les définitions de queries](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-queries.html)
 - [les définitions de filters](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-filters.html)
 
@@ -295,11 +295,12 @@ Quelles sont les 5 startups les plus anciennes (se baser sur `founded_*`) ?
 
 #### Exercice 5.2 :
 
-Quelles sont les startups dont le nom (`name`) ou les tags (`tag_list`) contiennent le mot "innovation" ? Comment peut-on donner plus d'importance à la recherche dans le nom que dans les tags ?
+Quelles sont les startups dont le nom (`name`) ou les tags (`tag_list`) contiennent le mot "innovation" ? Comment peut-on donner plus d'importance à la recherche dans le nom que dans les tags ?  
+Hint : il s'agit d'une recherche _multi_-champs
 
 #### Exercice 5.3 :
 
-Quelles sont les startups dont l'IPO a été réalisée pour plus de 10 millions de dollars champs `ipo.*`, classées par valeur descendante ?
+Quelles sont les startups dont l'IPO a été réalisée pour plus de 10 millions de dollars (champs `ipo.*`), classées par valeur descendante ?
 
 #### Exercice 5.4 :
 

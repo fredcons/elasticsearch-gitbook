@@ -27,7 +27,7 @@ On a vu qu'il était possible de donner des pondérations différentes à des ch
 
 ## Fonctionnement et administration d'un cluster
 
-On a travaillé sur une seule instance d'ES, mais c'est un produit pour fonctionner en cluster.
+On a travaillé sur une seule instance d'ES, mais c'est un produit conçu pour fonctionner en cluster.  
 Il est donc impératif de comprendre comment se répartissent les documents dans un index et dans un  cluster, quel est le parcours d'une requête ou d'indexation.
 
 [Ces](https://www.elastic.co/guide/en/elasticsearch/guide/master/distributed-cluster.html) [quatre](https://www.elastic.co/guide/en/elasticsearch/guide/master/distributed-docs.html) [chapitres](https://www.elastic.co/guide/en/elasticsearch/guide/master/distributed-search.html) [techniques](https://www.elastic.co/guide/en/elasticsearch/guide/master/inside-a-shard.html) fournissent des réponses à ces questions.

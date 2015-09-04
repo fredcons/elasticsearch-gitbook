@@ -115,7 +115,7 @@ curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
 
 ## Exercices
 
-Afin de répondre à ces questions, on pourra se baser sur [le guide des agrégations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) et les pages filles.
+Afin de répondre à ces questions, on pourra se baser sur [le guide des agrégations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) et ses pages filles.
 
 #### Exercice 6.1
 
