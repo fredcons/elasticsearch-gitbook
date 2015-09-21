@@ -91,7 +91,7 @@ On obtient un résultat avec pour chacun des 10 termes les plus courants (nombre
 Ici, les "buckets" sont donc chacun des éléments "key", et la métrique est le "doc_count" associé.
 
 On peut également exécuter cette agrégation dans le contexte d'une requête.
-Exemple: le top 10 des tags pour les startups fondées en 2012
+Exemple: le top 10 des tags pour les startups fondées en 2011
 
 ```
 curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
