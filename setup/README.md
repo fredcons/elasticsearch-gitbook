@@ -45,7 +45,7 @@ On dispose maintenant d'une machine Ubuntu sur laquelle sont installés :
 
 ElasticSearch dispose aussi du plugin [Marvel](http://localhost:9200/_plugin/marvel/), qui permet d'une part de monitorer l'instance d'ElasticSearch, mais aussi de la requêter dans son browser via l'interface [Sense](http://localhost:9200/_plugin/marvel/sense/).
 
-On pourra donc durant ce hands-on utiliser au choix Sense (de préférence) ou `curl` dans son terminal.
+On pourra donc durant ce hands-on utiliser au choix Sense (de préférence), ou `curl` dans son terminal.
 
 
 
