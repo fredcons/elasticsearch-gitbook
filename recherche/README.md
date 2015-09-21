@@ -290,6 +290,7 @@ Pour les questions suivantes, on pourra s'appuyer sur :
 #### Exercice 5.1 :
 
 Quelles sont les 5 startups les plus anciennes (se baser sur `founded_*`) ?
+Hint : on ne fait que _filter_ les données
 
 #### Exercice 5.2 :
 
