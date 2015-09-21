@@ -233,7 +233,7 @@ Voci un exemple de requête simple : afficher le champ `name` de 5 documents don
 ```
 curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
   "query" : {
-    "term" : { "name" : "web"}
+    "match" : { "name" : "web"}
   },
   "_source" : [ "name" ],
   "size": 5
