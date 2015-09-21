@@ -85,7 +85,8 @@ Voilà l'intégralité du schéma :
             "type" : "long"
           },
           "homepage_url" : {
-            "type" : "string"
+            "type" : "string",
+            "indexed" : "no"
           },
           "id" : {
             "properties" : {
