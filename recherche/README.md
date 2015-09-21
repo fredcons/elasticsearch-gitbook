@@ -188,6 +188,19 @@ Voilà l'intégralité du schéma :
 }
 ```
 
+Noter que l'on peut retrouver ces informations séparément en demandant d'une part le `mapping` : 
+
+```
+curl -XGET "http://localhost:9200/companies_db/_mapping?pretty"
+```
+
+puis les `settings` : 
+
+```
+curl -XGET "http://localhost:9200/companies_db/_settings?pretty"
+```
+
+
 ## Recherche simple par query string
 
 Egalement nommé "URI search", ce système permet d'effectuer des recherches basiques sur un index.
