@@ -303,7 +303,7 @@ Quelles sont les startups dont l'IPO a été réalisée pour plus de 10 millions
 #### Exercice 5.4 :
 
 Quelles sont les startups possédant des bureaux en Californie (soit `offices.state_code` == 'CA') et taggées "video" ?
-Attention : le champ 'offices' est `nested`
+Attention : le champ `offices` est `nested`
 
 
 
