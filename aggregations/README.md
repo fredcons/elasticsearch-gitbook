@@ -119,7 +119,7 @@ Afin de répondre à ces questions, on pourra se baser sur [le guide des agréga
 
 #### Exercice 6.1
 
-Obtenir des statistiques sur le champ `number_of_employees` : min, max avg, et les percentiles 1, 25, 50, 75, 95, 99, 99.9
+Obtenir des statistiques sur le champ `number_of_employees` : min, max avg, et les percentiles 1, 5, 25, 50, 75, 95, 99, 99.9
 
 #### Exercice 6.2
 
