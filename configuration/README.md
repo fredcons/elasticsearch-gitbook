@@ -180,7 +180,7 @@ On a donc disponibles dans la VM :
 
 Plus récemment, ES a développé son propre plugin d'administration, Marvel, produit payant pour la production, mais gratuit sur des machines de développement. Il est disponible sur http://localhost:9200/_plugin/marvel/.
 
-Outre son interface de monitoring, Marvel propose aussi Sense (http://localhost:9200/_plugin/marvel/sense/), qui interface de requêtage dans le browser.
+Outre son interface de monitoring, Marvel propose aussi Sense (http://localhost:9200/_plugin/marvel/sense/), interface de requêtage dans le browser.
 
 On pourra donc durant ce hands-on utiliser au choix Sense (de préférence), ou `curl` dans son terminal.
 
