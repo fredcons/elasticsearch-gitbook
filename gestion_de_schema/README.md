@@ -75,8 +75,7 @@ Pour les exercices suivants, on pourra s'appuyer sur [cette page](http://www.ela
 
 #### Exercice 3.4 :
 
-- Modifier le document créé en 3.1 ?
-
+- Modifier le document créé en 3.1 (en incrémentant le "count" par exemple)
 #### Exercice 3.5 :
 
 - Supprimer le document créé en 3.1 ?
