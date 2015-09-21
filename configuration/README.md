@@ -184,7 +184,7 @@ Outre son interface de monitoring, Marvel propose aussi Sense (http://localhost:
 
 On pourra donc durant ce hands-on utiliser au choix Sense (de préférence), ou `curl` dans son terminal.
 
-On notera que le port 9200 de la VM est rendu disponible sur la machine hôte : on peut donc utiliser ces plugins dans son navigateur, et toutes les commandes curl à venir seront exploitables depuis la machine hôte.
+On notera que le port 9200 de la VM est rendu disponible sur la machine hôte : on peut donc utiliser ces plugins dans son navigateur, et toutes les commandes curl / http à venir seront exploitables depuis la machine hôte.
 
 
 
