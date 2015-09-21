@@ -341,7 +341,7 @@ curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
         "nested" : {
           "path" : "offices",
           "filter" : {
-            "term" : { "offices.state_code.raw" : "CA"}
+            "term" : { "offices.state_code" : "CA"}
           }
         }
       }
