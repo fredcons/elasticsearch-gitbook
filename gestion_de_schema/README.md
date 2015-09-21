@@ -124,7 +124,7 @@ ES a donc déduit depuis les documents indexés ce qu'il juge être le type adé
 
 Si cela permet de rapidement commencer à jouer avec l'outil, il est difficilement envisageable de déployer une solution en prod sans avoir customisé le mapping, car c'est de sa qualité que dépendra le succès de la recherche.
 
-Les enjeux principaux lorsque on définit un champ sont les suivants :
+Les enjeux principaux lorsqu'on définit un champ sont les suivants :
 - quel est le type de ce champ ? Un champ numérique ne doit pas être indexé comme une string. Il faut donc spécifier le type correct pour ce champ.
 - que veut-on faire de ce champ ? Effectuer une recherche exacte ?  Effectuer une recherche textuelle ? Le récupérer ou juste l'utiliser dans une recherche ?  Il faut donc spécifier la manière dont on veut analyser ce champ.
 - quelle est la structure de l'objet stocké ? Au delà des types standards JSON (string, boolean, int...), ES peut également gérer des tableaux de ces types, voire utiliser des "nested objects" pour des structures plus complexes.
