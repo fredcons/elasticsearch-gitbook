@@ -153,9 +153,7 @@ Voilà l'intégralité du schéma :
               },
               "state_code" : {
                 "type" : "string",
-                "fields" : {
-                  "raw" : { "type" : "string", "index" : "not_analyzed" }
-                }
+                "index" : "not_analyzed"
               },
               "zip_code" : {
                 "type" : "string"
