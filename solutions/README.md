@@ -371,7 +371,7 @@ curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
 }'
 ```
 
-#### Exercice 6.2
+#### Exercice 5.2
 
 On va utiliser `histogram` en spécifiant un interval de 1
 (note : si on avait un champ date correctement formatté, on pourrait utiliser un `date_histogram`
