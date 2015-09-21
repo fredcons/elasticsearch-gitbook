@@ -117,15 +117,15 @@ curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
 
 Afin de répondre à ces questions, on pourra se baser sur [le guide des agrégations](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) et ses pages filles.
 
-#### Exercice 6.1
+#### Exercice 5.1
 
 Obtenir des statistiques sur le champ `number_of_employees` : min, max avg, et les percentiles 1, 5, 25, 50, 75, 95, 99, 99.9
 
-#### Exercice 6.2
+#### Exercice 5.2
 
 Obtenir un histogramme du nombre d'IPO par année (champ `ipo.pub_year`), puis par décennie.
 
-#### Exercice 6.3
+#### Exercice 5.3
 
 Obtenir pour les entreprises fondéees entre 2000 et 2015 (`founded_year`) les 5 tags (`tag_list`) les plus utilisés pour chaque année
 
