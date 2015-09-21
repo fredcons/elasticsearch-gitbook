@@ -244,7 +244,7 @@ Et sa réponse :
 
 ```
 {
-  "took" : 5,
+  "took" : 6,
   "timed_out" : false,
   "_shards" : {
     "total" : 5,
@@ -253,37 +253,37 @@ Et sa réponse :
   },
   "hits" : {
     "total" : 82,
-    "max_score" : 5.784622,
+    "max_score" : 4.4781237,
     "hits" : [ {
       "_index" : "companies_db",
       "_type" : "companies",
-      "_id" : "AU4fWqxeNbHfJKgC8owo",
-      "_score" : 5.784622,
+      "_id" : "AU_wei3kCYcZ42ux1O1s",
+      "_score" : 4.4781237,
       "_source":{"name":"NewTarget Web"}
     }, {
       "_index" : "companies_db",
       "_type" : "companies",
-      "_id" : "AU4fWqxpNbHfJKgC8pgC",
-      "_score" : 5.642988,
-      "_source":{"name":"Web CEO"}
+      "_id" : "AU_wei4DCYcZ42ux1Q2Y",
+      "_score" : 4.4781237,
+      "_source":{"name":"Web Momentum"}
     }, {
       "_index" : "companies_db",
       "_type" : "companies",
-      "_id" : "AU4fWqx-NbHfJKgC8q5t",
-      "_score" : 5.642988,
-      "_source":{"name":"Wee Web"}
+      "_id" : "AU_wei4FCYcZ42ux1Q9_",
+      "_score" : 4.4781237,
+      "_source":{"name":"Web Styler"}
     }, {
       "_index" : "companies_db",
       "_type" : "companies",
-      "_id" : "AU4fWqyENbHfJKgC8rTq",
-      "_score" : 5.642988,
+      "_id" : "AU_wei4MCYcZ42ux1Rac",
+      "_score" : 4.4781237,
+      "_source":{"name":"Web Piston"}
+    }, {
+      "_index" : "companies_db",
+      "_type" : "companies",
+      "_id" : "AU_wei4LCYcZ42ux1RYu",
+      "_score" : 4.263787,
       "_source":{"name":"Web Funters"}
-    }, {
-      "_index" : "companies_db",
-      "_type" : "companies",
-      "_id" : "AU4fWqxVNbHfJKgC8oHA",
-      "_score" : 5.4767423,
-      "_source":{"name":"Web-Chops"}
     } ]
   }
 }
