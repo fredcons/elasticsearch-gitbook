@@ -70,7 +70,7 @@ Pour les exercices suivants, on pourra s'appuyer sur [cette page](http://www.ela
 #### Exercice 3.3 :
 
 - Récupérer le document créé en 3.1
-- Comment peut-on récupérer certains champs seulement ?
+- Comment peut-on récupérer certains champs de ce document seulement ?
 - Bonus : Comment peut-on récupérer plusieurs documents par leurs ID ?
 
 #### Exercice 3.4 :
