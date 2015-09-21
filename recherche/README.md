@@ -225,7 +225,7 @@ curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
     "term" : { "name" : "web"}
   },
   "_source" : [ "name" ],
-  "size": 10
+  "size": 5
 }'
 ```
 
