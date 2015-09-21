@@ -180,7 +180,7 @@ On peut également passer un paramètre "analyzer" pour spécifier un analyzer c
 Il faut le définir comme *not_analyzed* : il sera conservé tel quel.
 
 
-### Exercice 5.1
+### Exercice 4.1
 
 Il n'y pas de requête ou filtre à réaliser : on va donc utiliser la requête `match_all` qui ramène tous les résultats.
 Pour obtenir les plus anciennes, on ne dispose pas d'une date de création, mais de trois champs founded_year / founded_month / founded_day sur lesquels on va trier par ordre ascendant.
