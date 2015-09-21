@@ -349,7 +349,7 @@ curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
 }'
 ```
 
-#### Exercice 6.1
+#### Exercice 5.1
 
 Il existe deux agrégations pour des mesures statistiques : `stats` et `extended_stats`. `extended_stats` permet d'obtenir des mesures supplémentaires (variance par exemple).
 Pour les percentiles, il va falloir une deuxième agrégation nommée `percentiles`
