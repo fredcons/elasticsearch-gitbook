@@ -79,7 +79,7 @@ Pour les exercices suivants, on pourra s'appuyer sur [cette page](http://www.ela
 
 #### Exercice 3.5 :
 
-- Supprimer le document créé en 3.1 ?
+- Supprimer le document créé en 3.1
 
 
 ## Comprendre le mapping
