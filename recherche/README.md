@@ -304,7 +304,6 @@ Pour les questions suivantes, on pourra s'appuyer sur :
 
 Quelles sont les 5 startups les plus anciennes (se baser sur `founded_*`) ?
 
-
 #### Exercice 4.2 :
 
 Quelles sont les startups dont le nom (`name`) ou les tags (`tag_list`) contiennent le mot "innovation" ? Comment peut-on donner plus d'importance à la recherche dans le nom que dans les tags ?  
