@@ -392,7 +392,7 @@ curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
 
 On peut aussi exécuter cette requête avec un intervalle de 10 pour voir les IPO par décennie.
 
-#### Exercice 6.3
+#### Exercice 5.3
 
 Il va falloir imbriquer des agrégations : d'abord agréger via des `terms` sur la `founded_year` (en triant par date), puis pour chaque date agréger via des `terms` sur `tag_list` (en laissant le tri par défaut par valeur décroissante, et en limitant à cinq valeurs).
 On va réaliser cela en imbriquant des éléments `aggs`
