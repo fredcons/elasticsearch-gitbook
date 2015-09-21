@@ -59,7 +59,7 @@ Pour les exercices suivants, on pourra s'appuyer sur [cette page](http://www.ela
 
 #### Exercice 3.1 :
 
-- Insérer un autre document en lui préassignant l'id "2" ?
+- Insérer un autre document en lui préassignant l'id "2"
 
 #### Exercice 3.2 :
 
