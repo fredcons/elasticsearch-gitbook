@@ -327,7 +327,7 @@ curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
 
 ### Exercice 5.4
 
-Les adresses des sociétés se trouvent dans le champ nested 'locations'. La notion de champ nested permet de gérer des collections d'objets embarqués dans l'objet principal.
+Les adresses des sociétés se trouvent dans le champ nested 'offices'. La notion de champ nested permet de gérer des collections d'objets embarqués dans l'objet principal.
 Il faut pour les accèder utiliser un nested filter (ou une nested query selon l'usage) :
 
 ```
