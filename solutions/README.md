@@ -226,7 +226,7 @@ curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
 }'
 ```
 
-### Exercice 5.2
+### Exercice 4.2
 
 On va utiliser la requête `multi_match` qui permet d'exécuter une requête sur plusieurs champs :
 
