@@ -5,7 +5,7 @@ Cette formation va s'appuyer sur une machine virtuelle préconfigurée.
 ## Prérequis
 
 Pour pouvoir lancer cette machine virtuelle, il faut avoir installé :
-- [Vagrant](https://www.vagrantup.com/)
+- [Vagrant](https://www.vagrantup.com/downloads.html)
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [git](http://git-scm.com/)
 
