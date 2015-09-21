@@ -172,7 +172,7 @@ Cela pourrait donner :
 
 ### Exercice 3.8
 
-Il existe un endpoint spécial pour tester le résultat d'un analyzer :
+Il existe un endpoint spécial `_analyze` pour tester le résultat d'un analyzer (ici l'analyzer par défaut) :
 
 ```
 # curl -XPOST http://localhost:9200/store/products/_analyzer -d 'My Super-Product'
