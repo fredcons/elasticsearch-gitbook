@@ -164,11 +164,6 @@ Pour des modifications lourdes, il faut donc :
 - supprimer le premier index, et renommer le nouveau
 - ou mieux, utiliser un alias pour l'index
 
-Cela pourrait donner :
-
-```
-
-```
 
 ### Exercice 3.8
 
