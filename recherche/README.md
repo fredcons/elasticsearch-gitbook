@@ -244,7 +244,6 @@ Et sa réponse :
 
 ```
 {
-{
   "took" : 6,
   "timed_out" : false,
   "_shards" : {
