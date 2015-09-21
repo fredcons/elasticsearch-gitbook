@@ -9,7 +9,7 @@ Pour pouvoir lancer cette machine virtuelle, il faut avoir installé :
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [git](http://git-scm.com/)
 
-Il ets préférable de télécharger les dernières versions de Vagrant et VirtualBox directement sur les sites des éditeurs.
+Il est préférable de télécharger les dernières versions de Vagrant et VirtualBox directement sur les sites des éditeurs.
 
 ## Mode opératoire
 
