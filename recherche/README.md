@@ -303,7 +303,7 @@ Pour les questions suivantes, on pourra s'appuyer sur :
 #### Exercice 4.1 :
 
 Quelles sont les 5 startups les plus anciennes (se baser sur `founded_*`) ?
-Hint : on ne fait que _filtrer_ les données
+
 
 #### Exercice 4.2 :
 
@@ -313,6 +313,7 @@ Hint : il s'agit d'une recherche _multi_-champs
 #### Exercice 4.3 :
 
 Quelles sont les startups dont l'IPO a été réalisée pour plus de 10 millions de dollars (champs `ipo.*`), classées par valeur descendante ?
+Hint : on ne fait que _filtrer_ les données
 
 #### Exercice 4.4 :
 
