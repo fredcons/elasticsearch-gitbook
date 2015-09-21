@@ -173,6 +173,8 @@ Il existe un endpoint spécial `_analyze` pour tester le résultat d'un analyzer
 # curl -XPOST http://localhost:9200/store/products/_analyzer -d 'My Super-Product'
 ```
 
+On peut également passer un paramètre "analyzer" pour sp"cifier un analyzer custom (ce qui sera souvent le cas).
+
 ### Exercice 3.9
 
 Il faut le définir comme *not_analyzed* : il sera conservé tel quel.
