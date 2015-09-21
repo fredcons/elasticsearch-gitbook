@@ -289,7 +289,7 @@ Le 1er résultat sera alors :
 ```
 Le résultat "Brightidea" étant rélégué plus loin.
 
-### Exercice 5.3
+### Exercice 4.3
 
 On n'a pas ici besoin de scoring: on va donc utiliser des filtres.
 Par ailleurs, il faudra filtrer à la fois sur le montant de l'IPO et sur sa currency, à travers l'utilisation d'un filtre `bool`.
