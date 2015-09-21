@@ -134,7 +134,7 @@ Pour les exercices suivants, on pourra s'appuyer sur [le guide du mapping](http:
 
 #### Exercice 3.6 :
 
-- Comment supprimer / recréer un mapping ?
+- Supprimer puis recréer le mapping de "products"
 
 #### Exercice 3.7 :
 
