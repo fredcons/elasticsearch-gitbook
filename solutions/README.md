@@ -190,7 +190,7 @@ curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
   "query" : {
     "match_all" : {}
   },
-  "fields" : [ "name" ],
+  "fields" : [ "name", "founded_year", "founded_month", "founded_day" ],
   "sort" : [
     { "founded_year" : { "order" : "asc" }},
     { "founded_month" : { "order" : "asc" }},
