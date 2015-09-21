@@ -287,21 +287,21 @@ Pour les questions suivantes, on pourra s'appuyer sur :
 - [les définitions de queries](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-queries.html)
 - [les définitions de filters](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-filters.html)
 
-#### Exercice 5.1 :
+#### Exercice 4.1 :
 
 Quelles sont les 5 startups les plus anciennes (se baser sur `founded_*`) ?
 Hint : on ne fait que _filtrer_ les données
 
-#### Exercice 5.2 :
+#### Exercice 4.2 :
 
 Quelles sont les startups dont le nom (`name`) ou les tags (`tag_list`) contiennent le mot "innovation" ? Comment peut-on donner plus d'importance à la recherche dans le nom que dans les tags ?  
 Hint : il s'agit d'une recherche _multi_-champs
 
-#### Exercice 5.3 :
+#### Exercice 4.3 :
 
 Quelles sont les startups dont l'IPO a été réalisée pour plus de 10 millions de dollars (champs `ipo.*`), classées par valeur descendante ?
 
-#### Exercice 5.4 :
+#### Exercice 4.4 :
 
 Quelles sont les startups possédant des bureaux en Californie (soit `offices.state_code` == 'CA') et taggées "video" ?
 Attention : le champ `offices` est `nested`
