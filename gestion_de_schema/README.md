@@ -137,7 +137,7 @@ Pour les exercices suivants, on pourra s'appuyer sur [le guide du mapping](http:
 
 #### Exercice 3.7 :
 
-- Comment modifier el mapping d'un champ existant ? (hint : c'est compliqué :) )
+- Comment modifier le mapping d'un champ existant ? (hint : c'est compliqué :) )
 
 #### Exercice 3.8 :
 
