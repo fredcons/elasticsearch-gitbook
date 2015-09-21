@@ -43,6 +43,9 @@ On dispose maintenant d'une machine Ubuntu sur laquelle sont installés :
 - Kibana
 - quelques packages utilitaires comme [git](http://git-scm.com/), [jq](http://stedolan.github.io/jq/), [es2unix](https://github.com/elastic/es2unix)
 
+ElasticSearch dispose aussi du plugin [Marvel](http://localhost:9200/_plugin/marvel/), qui permet d'une part de monitorer l'instance d'ElasticSearch, mais aussi de la requêter dans son browser via l'interface [Sense](http://localhost:9200/_plugin/marvel/sense/).
+
+On pourra donc durant ce hands-on utiliser au choix Sense (de préférence) ou `curl` dans son terminal.
 
 
 
