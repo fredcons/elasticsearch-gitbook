@@ -277,7 +277,7 @@ Et sa réponse :
 ```
 
 Cette réponse contient donc :
-- des metadata pour la requête : temps d'exécution, nombre de hits
+- des metadata pour la requête : temps d'exécution en millisecondes, nombre de hits, nombre de shards interrogés
 - une liste de résultats (par défaut : 10) avec les champs spécifiés (par défaut: tous)  dans l'ordre spécifié (par défaut: score descendant)
 
 ## Exercices
