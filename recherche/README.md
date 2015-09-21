@@ -215,7 +215,7 @@ Cette requête sera composée :
 Les queries consistent à effectuer une recherche sur un ou plusieurs champs, et à évaluer la pertinence d'un document par rapport à cette recherche, pertinence qui se traduira donc par un score.  
 Les filtres permettent de réduire le champ de la recherche, mais ne contribuent pas au score. Les filtres étant rapides et cachés, ils sont à prescrire pour toute recherche ne nécessitant pas de score.
 
-Voci un exemple de requête simple :
+Voci un exemple de requête simple : afficher le champ `name` de 5 documents dont le champ `name` contient `web`, et formatter le résultat (avec `?pretty`)
 
 ```
 curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
