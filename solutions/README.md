@@ -175,7 +175,7 @@ Cela pourrait donner :
 Il existe un endpoint spécial pour tester le résultat d'un analyzer :
 
 ```
-TODO
+# curl -XPOST http://localhost:9200/store/products/_analyzer -d 'My SuperProduct'
 ```
 
 ### Exercice 3.9
