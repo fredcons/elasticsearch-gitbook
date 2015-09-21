@@ -142,7 +142,7 @@ Pour les exercices suivants, on pourra s'appuyer sur [le guide du mapping](http:
 
 #### Exercice 3.8 :
 
-- Comment tester un analyzer sur du texte ?
+- Afficher l'analyze que fait ES du champ "name"
 
 #### Exercice 3.9 :
 
