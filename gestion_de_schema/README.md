@@ -75,11 +75,11 @@ Pour les exercices suivants, on pourra s'appuyer sur [cette page](http://www.ela
 
 #### Exercice 3.4 :
 
-- Comment modifier un document ?
+- Modifier le document créé en 3.1 ?
 
 #### Exercice 3.5 :
 
-- Comment supprimer un document ?
+- Supprimer le document créé en 3.1 ?
 
 
 ## Comprendre le mapping
