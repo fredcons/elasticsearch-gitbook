@@ -103,7 +103,7 @@ La liste complète est disponible [ici](https://www.elastic.co/guide/en/elastics
 
 ## Tokenfilters
 
-Les `tokenfilter`s vont traiter chaque terme émis par les `tokenizer`s, pour les modifier, les supprimer, ou ajouter d'autres termes.  
+Les `tokenfilters` vont traiter chaque terme émis par les `tokenizers`, pour les modifier, les supprimer, ou ajouter d'autres termes.  
 C'est en les combinant que l'on va vraiment pouvoir traiter le texte comme on le veut.  
 Les filtres de base incluent :
 - `lowercase`, qui transforme le texte en minuscule
@@ -113,6 +113,8 @@ Les filtres de base incluent :
 - `stopwords` qui va supprimer des mots
 - `stemming` qui va réduire le mot à sa racine
 - et [bien d'autres](https://www.elastic.co/guide/en/elasticsearch/reference/1.7/analysis-tokenfilters.html)
+ 
+
 
 ## Utilisation dans un schéma
 
