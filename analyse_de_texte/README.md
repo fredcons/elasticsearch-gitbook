@@ -70,6 +70,8 @@ La documentation de cet endpoint se trouve [ici](https://www.elastic.co/guide/en
 
 ## Analyzer
 
+
+
 ## Tokenfilter
 
 ## Exercices
