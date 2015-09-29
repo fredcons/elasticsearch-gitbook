@@ -69,6 +69,24 @@ La documentation de cet endpoint se trouve [ici](https://www.elastic.co/guide/en
 
 ## Analyzers
 
+L'`analyzer` est la brique d'analyse de plus haut niveau : c'est elle que l'on va assigner à un champ, de la manière suivante : 
+
+```
+   "my_field" : {
+     "type"     : "string",
+     "analyzer" : "whitespace"
+   }
+```
+
+
+Comme vu plus haut, un `analyzer` se compose:  
+- d'un `tokenizer` qui travaille au niveau du texte
+- d'une chaine de `tokenfilter`s qui travaillent au niveau de chaque terme émis par le `tokenizer`
+- de `charfilter` qui permettent de transformer des caractères (on va les laisser de coté)
+ 
+ES propose entre autres les `analyzer`s `standard`, `whitespace`, ainsi que des `analyzer`s [par langage](https://www.elastic.co/guide/en/elasticsearch/reference/1.7/analysis-lang-analyzer.html), mais la plupart du temps, il va falloir définir soi-même un ou plusieurs analyzers customs.
+
+
 ## Tokenizers
 
 On l'a vu, un `tokenizer` travaille au niveau d'un texte, et le découpe en `tokens`.  
@@ -85,6 +103,18 @@ La liste complète est disponible [ici](https://www.elastic.co/guide/en/elastics
 
 ## Tokenfilters
 
+Les `tokenfilter`s vont traiter chaque terme émis par les `tokenizer`s, pour les modifier, les supprimer, ou ajouter d'autres termes.  
+C'est en les combinant que l'on va vraiment pouvoir traiter le texte comme on le veut.  
+Les filtres de base incluent :
+- `lowercase`, qui transforme le texte en minuscule
+- `asciifolding` qui normalise les accents, cédilles...
+- `synonym` qui va ajouter des termes
+- `keyword` qui va préserver des termes
+- `stopwords` qui va supprimer des mots
+- `stemming` qui va réduire le mot à sa racine
+- et [bien d'autres](https://www.elastic.co/guide/en/elasticsearch/reference/1.7/analysis-tokenfilters.html)
+
+## Utilisation dans un schéma
 
 
 ## Exercices
