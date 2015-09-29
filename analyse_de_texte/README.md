@@ -19,14 +19,51 @@ Il prend en paramètres :
 Exemple avec l'`analyzer` `standard` : 
 
 ```
+curl http://localhost:9200/_analyze?pretty -d "Hello there"                      
+{
+  "tokens" : [ {
+    "token" : "hello",
+    "start_offset" : 0,
+    "end_offset" : 5,
+    "type" : "<ALPHANUM>",
+    "position" : 1
+  }, {
+    "token" : "there",
+    "start_offset" : 6,
+    "end_offset" : 11,
+    "type" : "<ALPHANUM>",
+    "position" : 2
+  } ]
+}
 
 ```
 
 
-Quand on veut customiser la configuration d'analyse, celle-ci est définie sur un index : on peut donc appeler `/_analyze` sur un index précis, en référençant un `analyzer` précis. Exemple avec l'index précédemment utilisé : 
+Quand on veut customiser la configuration d'analyse, celle-ci est définie sur un index : on peut donc appeler `/_analyze` sur un index précis, en référençant un `analyzer` de cet index. Exemple avec l'index précédemment utilisé et l'`analyzer` `tags` : 
 
 ```
-
+curl http://localhost:9200/companies_db/_analyze?pretty&analyzer=tags -d "tag1, tag2, tag3"
+{
+  "tokens" : [ {
+    "token" : "tag1",
+    "start_offset" : 0,
+    "end_offset" : 4,
+    "type" : "word",
+    "position" : 1
+  }, {
+    "token" : "tag2",
+    "start_offset" : 6,
+    "end_offset" : 10,
+    "type" : "word",
+    "position" : 2
+  }, {
+    "token" : "tag3",
+    "start_offset" : 12,
+    "end_offset" : 16,
+    "type" : "word",
+    "position" : 3
+  } ]
+}
 ```
 
 La documentation de cet endpoint se trouve [ici](https://www.elastic.co/guide/en/elasticsearch/reference/1.7/indices-analyze.html).
