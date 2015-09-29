@@ -29,7 +29,7 @@ Quand on veut customiser la configuration d'analyse, celle-ci est définie sur u
 
 ```
 
-La documentation de cet endpoint se trouvue [ici](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/indices-analyze.html).
+La documentation de cet endpoint se trouvue [ici](https://www.elastic.co/guide/en/elasticsearch/reference/1.7/indices-analyze.html).
 
 ## Analyzer
 
