@@ -118,6 +118,31 @@ Les filtres de base incluent :
 
 ## Utilisation dans un schéma
 
+Chaque index présente une section `settings`, dans laquelle on va trouver : 
+- le paramétrage "global de l'index : réplication, sharding, paramètres techniques de bas niveau
+- une section `analysis` dans laquelle on trouverra tous les éléments de la chaine d'analyse, rangés par type.
+ 
+
+Cela donne : 
+
+```
+"settings" : {
+  ...
+  "analysis" : {
+    "filter" : {
+      ...
+    },
+    "tokenizer" : {
+      ...
+    },
+    "analyzer" : {
+      ...
+    }
+  }
+}
+```
+
+
 
 ## Exercices
 
