@@ -69,14 +69,7 @@ La documentation de cet endpoint se trouve [ici](https://www.elastic.co/guide/en
 
 ## Analyzers
 
-L'`analyzer` est la brique d'analyse de plus haut niveau : c'est elle que l'on va assigner à un champ, de la manière suivante : 
-
-```
-   "my_field" : {
-     "type"     : "string",
-     "analyzer" : "whitespace"
-   }
-```
+L'`analyzer` est la brique d'analyse de plus haut niveau : c'est elle que l'on va assigner à un champ du schéma pour en définir l'usage qu'on veut en avoir.
 
 
 Comme vu plus haut, un `analyzer` se compose:  
@@ -142,6 +135,39 @@ Cela donne :
 }
 ```
 
+Les `filters` et `tokenizers` vont avoir leur propre nom (ex : `my_custom_stemmer`), référencer les briques de base d'ElasticSearch (ex : `stemmer`), en les paramétrant selon les besoins de l'application (ex : "name" : "light_french")
+
+```
+    "filter" : {
+      "my_custom_stemmer" : {
+        "type" : "stemmer",
+        "name" : "light_french"
+      }
+    },  
+```
+
+Un `analyzer` va ensuite référencer un `tokenizer` et plusieurs `tokenfilters`, qui existent dans el schéma ou sont des briques de base d'ES :
+
+```
+    "analyzer" : {
+      "my_analyzer" : {
+        "tokenizer" :  "whitespace",
+        "filter"    : [
+          "lowercase",
+          "my_custom_stemmer"
+        ]
+      }
+    }  
+```   
+
+On peut ensuite référencer cet `analyzer` sur un champ du schéma : 
+
+```
+   "my_field" : {
+     "type"     : "string",
+     "analyzer" : "my_analyzer"
+   }
+```
 
 
 ## Exercices
