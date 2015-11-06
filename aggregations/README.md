@@ -19,7 +19,7 @@ Une agrégation se définit dans un document JSON similaire à celui d'une requ�
 Voici un exemple d'agrégation multi-bucket : compter le nombre de startups pour chaque tag :
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "size" : 0,
   "aggs" : {
     "tags" : {
@@ -94,7 +94,7 @@ On peut également exécuter cette agrégation dans le contexte d'une requête.
 Exemple: le top 10 des tags pour les startups fondées en 2011
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "size" : 0,
   "query" : {
     "filtered" : {
