@@ -247,7 +247,7 @@ On voit alors que le 1er résultat est :
 
 ```
 {
-  "_index" : "companies_db",
+  "_index" : "crunchbase",
   "_type" : "companies",
   "_id" : "AU4gQEgoNbHfJKgC88Ff",
   "_score" : 7.9127636,
@@ -277,7 +277,7 @@ Le 1er résultat sera alors :
 
 ```
  {
-  "_index" : "companies_db",
+  "_index" : "crunchbase",
   "_type" : "companies",
   "_id" : "AU4gQEgMNbHfJKgC86Rs",
   "_score" : 6.8977776,
