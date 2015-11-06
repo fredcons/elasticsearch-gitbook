@@ -186,7 +186,7 @@ Il n'y pas de requête ou filtre à réaliser : on va donc utiliser la requête 
 Pour obtenir les plus anciennes, on ne dispose pas d'une date de création, mais de trois champs founded_year / founded_month / founded_day sur lesquels on va trier par ordre ascendant.
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "query" : {
     "match_all" : {}
   },
@@ -205,7 +205,7 @@ Ce qui permet de voir que la qualité des dates n'est pas là...
 On peut donc filter les sociétés créées après 1990 :
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "query" : {
     "filtered": {
       "query": {
@@ -231,7 +231,7 @@ curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
 On va utiliser la requête `multi_match` qui permet d'exécuter une requête sur plusieurs champs :
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "query" : {
     "multi_match" : {
       "query":    "innovation",
@@ -261,7 +261,7 @@ On voit alors que le 1er résultat est :
 On peut influer sur le scoring en favorisant l'un ou l'autre champ d'un multimatch :
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "query" : {
     "multi_match" : {
       "query":    "innovation",
@@ -296,7 +296,7 @@ Par ailleurs, il faudra filtrer à la fois sur le montant de l'IPO et sur sa cur
 On notera qu'on peut naviguer sur un sous-objet (ipo) sans configuration particulière.
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "query" : {
     "filtered": {
       "query": {
@@ -328,7 +328,7 @@ Les adresses des sociétés se trouvent dans le champ nested 'offices'. La notio
 Il faut pour les accèder utiliser un nested filter (ou une nested query selon l'usage) :
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "query" : {
     "filtered" : {
       "query" : {
@@ -355,7 +355,7 @@ Il existe deux agrégations pour des mesures statistiques : `stats` et `extended
 Pour les percentiles, il va falloir une deuxième agrégation nommée `percentiles`
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "size" : 0,
   "aggs" : {
     "employees_stats" : {
@@ -377,7 +377,7 @@ On va utiliser `histogram` en spécifiant un interval de 1
 (note : si on avait un champ date correctement formatté, on pourrait utiliser un `date_histogram`
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "size" : 0,
   "aggs" : {
     "ipo_year" : {
@@ -398,7 +398,7 @@ Il va falloir imbriquer des agrégations : d'abord agréger via des `terms` sur 
 On va réaliser cela en imbriquant des éléments `aggs`
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "size" : 0,
   "query" : {
     "filtered": {
