@@ -41,7 +41,7 @@ curl http://localhost:9200/_analyze?pretty -d "Hello there"
 Quand on veut customiser la configuration d'analyse, celle-ci est définie sur un index : on peut donc appeler `/_analyze` sur un index précis, en référençant un `analyzer` de cet index. Exemple avec l'index précédemment utilisé et l'`analyzer` `tags` : 
 
 ```
-curl http://localhost:9200/companies_db/_analyze?pretty&analyzer=tags -d "tag1, tag2, tag3"
+curl http://localhost:9200/crunchbase/_analyze?pretty&analyzer=tags -d "tag1, tag2, tag3"
 {
   "tokens" : [ {
     "token" : "tag1",
