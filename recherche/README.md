@@ -9,21 +9,21 @@ On va réaliser un import d'un [jeu de données représentant un ensemble de sta
 On va donc créer le schéma :
 
 ```
-curl -XPUT http://localhost:9200/companies_db \
+curl -XPUT http://localhost:9200/crunchbase \
     --data-binary @/etc/crunchbase/mappings.json
 ```
 
 Puis utiliser la bulk api d'ES pour importer les données :
 
 ```
-curl -XPUT http://localhost:9200/companies_db/companies/_bulk \
+curl -XPUT http://localhost:9200/crunchbase/companies/_bulk \
      --data-binary @/etc/crunchbase/companies.bulk.json
 ```
 
 On vérifie le nombre de documents dans l'index :
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_count
+curl -XGET http://localhost:9200/crunchbase/companies/_count
 ```
 
 On peut donc commencer à requêter cet index.
@@ -192,13 +192,13 @@ Voilà l'intégralité du schéma :
 Noter que l'on peut retrouver ces informations séparément en demandant d'une part le `mapping` : 
 
 ```
-curl -XGET "http://localhost:9200/companies_db/_mapping?pretty"
+curl -XGET "http://localhost:9200/crunchbase/_mapping?pretty"
 ```
 
 puis les `settings` : 
 
 ```
-curl -XGET "http://localhost:9200/companies_db/_settings?pretty"
+curl -XGET "http://localhost:9200/crunchbase/_settings?pretty"
 ```
 
 
@@ -209,7 +209,7 @@ Egalement nommé "URI search", ce système permet d'effectuer des recherches bas
 Exemple de recherche de société dont ne nom est 'Twitter' : 
 
 ```
-curl -XGET 'http://localhost:9200/companies_db/companies/_search?q=name:Twitter&pretty'
+curl -XGET 'http://localhost:9200/crunchbase/companies/_search?q=name:Twitter&pretty'
 ```
 
 Ce système de recherche propose une syntaxe qui permet d'effectuer des OR/AND sur un ou plusieurs champs : on en trouvera la description [ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax).
@@ -232,7 +232,7 @@ Les filtres permettent de réduire le champ de la recherche, mais ne contribuent
 Voci un exemple de requête simple : afficher le champ `name` de 5 documents dont le champ `name` contient `web`, et formatter le résultat (avec `?pretty`)
 
 ```
-curl -XGET http://localhost:9200/companies_db/companies/_search?pretty -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "query" : {
     "match" : { "name" : "web"}
   },
