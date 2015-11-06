@@ -256,31 +256,31 @@ Et sa réponse :
     "total" : 82,
     "max_score" : 4.4781237,
     "hits" : [ {
-      "_index" : "companies_db",
+      "_index" : "crunchbase",
       "_type" : "companies",
       "_id" : "AU_wei3kCYcZ42ux1O1s",
       "_score" : 4.4781237,
       "_source":{"name":"NewTarget Web"}
     }, {
-      "_index" : "companies_db",
+      "_index" : "crunchbase",
       "_type" : "companies",
       "_id" : "AU_wei4DCYcZ42ux1Q2Y",
       "_score" : 4.4781237,
       "_source":{"name":"Web Momentum"}
     }, {
-      "_index" : "companies_db",
+      "_index" : "crunchbase",
       "_type" : "companies",
       "_id" : "AU_wei4FCYcZ42ux1Q9_",
       "_score" : 4.4781237,
       "_source":{"name":"Web Styler"}
     }, {
-      "_index" : "companies_db",
+      "_index" : "crunchbase",
       "_type" : "companies",
       "_id" : "AU_wei4MCYcZ42ux1Rac",
       "_score" : 4.4781237,
       "_source":{"name":"Web Piston"}
     }, {
-      "_index" : "companies_db",
+      "_index" : "crunchbase",
       "_type" : "companies",
       "_id" : "AU_wei4LCYcZ42ux1RYu",
       "_score" : 4.263787,
