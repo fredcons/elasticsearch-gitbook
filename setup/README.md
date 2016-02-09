@@ -41,6 +41,8 @@ vagrant ssh
 On dispose maintenant d'une machine Ubuntu sur laquelle sont installés :
 - ElasticSearch
 - Kibana
+- Logstash
+- Topbeat et Packetbeat
 - quelques packages utilitaires comme [git](http://git-scm.com/), [jq](http://stedolan.github.io/jq/), [es2unix](https://github.com/elastic/es2unix)
 
 
