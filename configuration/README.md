@@ -18,59 +18,96 @@ On va examiner le package qui nous intéresse :
 /usr
 /usr/share
 /usr/share/elasticsearch
-/usr/share/elasticsearch/NOTICE.txt
-/usr/share/elasticsearch/README.textile
 /usr/share/elasticsearch/bin
 /usr/share/elasticsearch/bin/elasticsearch
+/usr/share/elasticsearch/bin/elasticsearch-systemd-pre-exec
 /usr/share/elasticsearch/bin/elasticsearch.in.sh
 /usr/share/elasticsearch/bin/plugin
-/usr/share/elasticsearch/lib
-/usr/share/elasticsearch/lib/elasticsearch-1.5.1.jar
-/usr/share/elasticsearch/lib/sigar
-/usr/share/elasticsearch/lib/sigar/libsigar-amd64-linux.so
-/usr/share/elasticsearch/lib/sigar/libsigar-ia64-linux.so
-/usr/share/elasticsearch/lib/sigar/libsigar-x86-linux.so
-/usr/share/elasticsearch/lib/sigar/sigar-1.6.4.jar
-/usr/share/elasticsearch/lib/antlr-runtime-3.5.jar
-/usr/share/elasticsearch/lib/apache-log4j-extras-1.2.17.jar
-/usr/share/elasticsearch/lib/asm-4.1.jar
-/usr/share/elasticsearch/lib/asm-commons-4.1.jar
-/usr/share/elasticsearch/lib/groovy-all-2.4.0.jar
-/usr/share/elasticsearch/lib/jna-4.1.0.jar
-/usr/share/elasticsearch/lib/jts-1.13.jar
-/usr/share/elasticsearch/lib/log4j-1.2.17.jar
-/usr/share/elasticsearch/lib/lucene-analyzers-common-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-core-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-expressions-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-grouping-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-highlighter-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-join-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-memory-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-misc-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-queries-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-queryparser-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-sandbox-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-spatial-4.10.4.jar
-/usr/share/elasticsearch/lib/lucene-suggest-4.10.4.jar
-/usr/share/elasticsearch/lib/spatial4j-0.4.1.jar
 /etc
+/etc/elasticsearch
+/etc/elasticsearch/elasticsearch.yml
+/etc/elasticsearch/logging.yml
+/etc/elasticsearch/scripts
 /etc/default
 /etc/default/elasticsearch
+/usr/share/elasticsearch/lib
+/usr/share/elasticsearch/lib/HdrHistogram-2.1.6.jar
+/usr/share/elasticsearch/lib/apache-log4j-extras-1.2.17.jar
+/usr/share/elasticsearch/lib/commons-cli-1.3.1.jar
+/usr/share/elasticsearch/lib/compiler-0.8.13.jar
+/usr/share/elasticsearch/lib/compress-lzf-1.0.2.jar
+/usr/share/elasticsearch/lib/elasticsearch-2.2.0.jar
+/usr/share/elasticsearch/lib/guava-18.0.jar
+/usr/share/elasticsearch/lib/hppc-0.7.1.jar
+/usr/share/elasticsearch/lib/jackson-core-2.6.2.jar
+/usr/share/elasticsearch/lib/jackson-dataformat-cbor-2.6.2.jar
+/usr/share/elasticsearch/lib/jackson-dataformat-smile-2.6.2.jar
+/usr/share/elasticsearch/lib/jackson-dataformat-yaml-2.6.2.jar
+/usr/share/elasticsearch/lib/jna-4.1.0.jar
+/usr/share/elasticsearch/lib/joda-convert-1.2.jar
+/usr/share/elasticsearch/lib/joda-time-2.8.2.jar
+/usr/share/elasticsearch/lib/jsr166e-1.1.0.jar
+/usr/share/elasticsearch/lib/jts-1.13.jar
+/usr/share/elasticsearch/lib/log4j-1.2.17.jar
+/usr/share/elasticsearch/lib/lucene-analyzers-common-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-backward-codecs-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-core-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-grouping-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-highlighter-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-join-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-memory-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-misc-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-queries-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-queryparser-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-sandbox-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-spatial-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-spatial3d-5.4.1.jar
+/usr/share/elasticsearch/lib/lucene-suggest-5.4.1.jar
+/usr/share/elasticsearch/lib/netty-3.10.5.Final.jar
+/usr/share/elasticsearch/lib/securesm-1.0.jar
+/usr/share/elasticsearch/lib/snakeyaml-1.15.jar
+/usr/share/elasticsearch/lib/spatial4j-0.5.jar
+/usr/share/elasticsearch/lib/t-digest-3.0.jar
+/usr/share/elasticsearch/modules
+/usr/share/elasticsearch/modules/lang-expression
+/usr/share/elasticsearch/modules/lang-groovy
+/usr/share/elasticsearch/modules/lang-expression/antlr4-runtime-4.5.1-1.jar
+/usr/share/elasticsearch/modules/lang-expression/asm-5.0.4.jar
+/usr/share/elasticsearch/modules/lang-expression/asm-commons-5.0.4.jar
+/usr/share/elasticsearch/modules/lang-expression/lang-expression-2.2.0.jar
+/usr/share/elasticsearch/modules/lang-expression/lucene-expressions-5.4.1.jar
+/usr/share/elasticsearch/modules/lang-expression/plugin-descriptor.properties
+/usr/share/elasticsearch/modules/lang-expression/plugin-security.policy
+/usr/share/elasticsearch/modules/lang-groovy/groovy-all-2.4.4-indy.jar
+/usr/share/elasticsearch/modules/lang-groovy/lang-groovy-2.2.0.jar
+/usr/share/elasticsearch/modules/lang-groovy/plugin-descriptor.properties
+/usr/share/elasticsearch/modules/lang-groovy/plugin-security.policy
 /etc/init.d
 /etc/init.d/elasticsearch
 /usr/lib
 /usr/lib/systemd
 /usr/lib/systemd/system
 /usr/lib/systemd/system/elasticsearch.service
-/etc/elasticsearch
-/etc/elasticsearch/elasticsearch.yml
-/etc/elasticsearch/logging.yml
+/usr/lib/sysctl.d
+/usr/lib/sysctl.d/elasticsearch.conf
+/usr/lib/tmpfiles.d
+/usr/lib/tmpfiles.d/elasticsearch.conf
 /usr/share/lintian
 /usr/share/lintian/overrides
 /usr/share/lintian/overrides/elasticsearch
+/usr/share/elasticsearch/NOTICE.txt
+/usr/share/elasticsearch/README.textile
 /usr/share/doc
 /usr/share/doc/elasticsearch
 /usr/share/doc/elasticsearch/copyright
+/var
+/var/lib
+/var/lib/elasticsearch
+/var/log
+/var/log/elasticsearch
+/usr/share/elasticsearch/plugins
+/var/run
+/var/run/elasticsearch
 ```
 
 On voit donc que:
@@ -83,9 +120,9 @@ On voit donc que:
 On va maintenant lancer le service, qui est délibérément maintenu stoppé au démarrage de la VM :
 
 ```
- # service elasticsearch start
- * Starting Elasticsearch Server
- # service elasticsearch status
+# service elasticsearch start 
+ * Starting Elasticsearch Server [ OK ] 
+# service elasticsearch status
  * elasticsearch is running
 ```
 
@@ -94,18 +131,18 @@ Voilà, le service est démarré, et on peut le constater en interrogeant le por
 ```
 # curl http://localhost:9200
 {
-  "status" : 200,
-  "name" : "Zuras",
+  "name" : "Bentley Wittman",
   "cluster_name" : "elasticsearch",
   "version" : {
-    "number" : "1.5.1",
-    "build_hash" : "5e38401bc4e4388537a615569ac60925788e1cf4",
-    "build_timestamp" : "2015-04-09T13:41:35Z",
+    "number" : "2.2.0",
+    "build_hash" : "8ff36d139e16f8720f2947ef62c8167a888992fe",
+    "build_timestamp" : "2016-01-27T13:32:39Z",
     "build_snapshot" : false,
-    "lucene_version" : "4.10.4"
+    "lucene_version" : "5.4.1"
   },
   "tagline" : "You Know, for Search"
 }
+
 
 ```
 
@@ -117,19 +154,22 @@ La plupart des langages possèdent un SDK pour intégrer l'usage d'ElasticSearch
 On peut aussi noter que le démarrage d'ES a créé un fichier de log, dans /var/log/elasticsearch/elasticsearch.log :
 
 ```
-[2015-04-17 14:46:30,535][INFO ][node                     ] [Zuras] version[1.5.1], pid[1529], build[5e38401/2015-04-09T13:41:35Z]
-[2015-04-17 14:46:30,535][INFO ][node                     ] [Zuras] initializing ...
-[2015-04-17 14:46:30,554][INFO ][plugins                  ] [Zuras] loaded [marvel], sites [marvel, bigdesk, head]
-[2015-04-17 14:46:33,925][INFO ][node                     ] [Zuras] initialized
-[2015-04-17 14:46:33,927][INFO ][node                     ] [Zuras] starting ...
-[2015-04-17 14:46:34,312][INFO ][transport                ] [Zuras] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/10.0.2.15:9300]}
-[2015-04-17 14:46:34,361][INFO ][discovery                ] [Zuras] elasticsearch/9YZCD_G_R1CCyrP9rBsOiw
-[2015-04-17 14:46:38,206][INFO ][cluster.service          ] [Zuras] new_master [Zuras][9YZCD_G_R1CCyrP9rBsOiw][precise64][inet[/10.0.2.15:9300]], reason: zen-disco-join (elected_as_master)
+[2016-02-24 16:39:08,992][INFO ][node                     ] [Bentley Wittman] version[2.2.0], pid[7866], build[8ff36d1/2016-01-27T13:32:39Z]
+[2016-02-24 16:39:08,992][INFO ][node                     ] [Bentley Wittman] initializing ...
+[2016-02-24 16:39:09,489][INFO ][plugins                  ] [Bentley Wittman] modules [lang-expression, lang-groovy], plugins [head, kopf], sites [head, kopf]
+[2016-02-24 16:39:09,512][INFO ][env                      ] [Bentley Wittman] using [1] data paths, mounts [[/ (/dev/mapper/precise64-root)]], net usable_space [71.3gb], net total_space [78.8gb], spins? [possibly], types [ext4]
+[2016-02-24 16:39:09,512][INFO ][env                      ] [Bentley Wittman] heap size [1007.3mb], compressed ordinary object pointers [true]
+[2016-02-24 16:39:11,260][INFO ][node                     ] [Bentley Wittman] initialized
+[2016-02-24 16:39:11,260][INFO ][node                     ] [Bentley Wittman] starting ...
+[2016-02-24 16:39:11,333][INFO ][transport                ] [Bentley Wittman] publish_address {10.0.2.15:9300}, bound_addresses {[::]:9300}
+[2016-02-24 16:39:11,341][INFO ][discovery                ] [Bentley Wittman] elasticsearch/QQWg3JXSSyyjJuJs1Gtvbw
+[2016-02-24 16:39:14,429][INFO ][cluster.service          ] [Bentley Wittman] new_master {Bentley Wittman}{QQWg3JXSSyyjJuJs1Gtvbw}{10.0.2.15}{10.0.2.15:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-02-24 16:39:14,458][INFO ][http                     ] [Bentley Wittman] publish_address {10.0.2.15:9200}, bound_addresses {[::]:9200}
+[2016-02-24 16:39:14,458][INFO ][node                     ] [Bentley Wittman] started
+[2016-02-24 16:39:14,488][INFO ][gateway                  ] [Bentley Wittman] recovered [0] indices into cluster_state
 ```
 
 Il faudra régulièrement consulter ce fichier pour voir comment se comporte l'instance.
-
-Par ailleurs, ES a également créé un dossier /var/lib/elasticsearch, dans lequel seront créés les fichiers physiques des index.
 
 ## Exploration des fichiers de configuration
 
@@ -167,7 +207,7 @@ On redémarre ensuite ES, et on peut voir que les logs et dossiers de stockage s
 On a pu voir dans la log de démarrage :
 
 ```
-[2015-04-17 15:00:12,243][INFO ][plugins                  ] [Franz Kafka] loaded [marvel], sites [marvel, bigdesk, head]
+[2016-02-24 16:55:42,776][INFO ][plugins                  ] [Franz Kafka] modules [lang-expression, lang-groovy], plugins [head, kopf], sites [head, kopf]
 ```
 
 ES propose un mécanisme de plugins qui permettent d'étendre ses capacités, et d'en faciliter l'exploitation.
@@ -176,15 +216,23 @@ Pendant longtemps, ES n'a proposé aucune interface graphique d'administration :
 
 On a donc disponibles dans la VM :
 - head, disponible sur http://localhost:9200/_plugin/head/
-- bigdesk, disponible sur http://localhost:9200/_plugin/bigdesk/
+- kopf, disponible sur http://localhost:9200/_plugin/kopf/
 
-Plus récemment, ES a développé son propre plugin d'administration, Marvel, produit payant pour la production, mais gratuit sur des machines de développement. Il est disponible sur http://localhost:9200/_plugin/marvel/.
+## Kibana
 
-Outre son interface de monitoring, Marvel propose aussi Sense (http://localhost:9200/_plugin/marvel/sense/), interface de requêtage dans le browser.
+Kibana est un autre produit de la société Elastic : il permet de réaliser des visualisations complexes sur tous types d'index, notamment des index logstash.  
+Mais ce n'est pas forcément ce qui va nous intéresser ici : on va installer son plugin `sense`, qui permet de requêter Elasticsearch à travers un browser.  
+On va d'abord démarrer Kibana : 
+
+```
+service kibana start
+```   
+
+On peut ensuite aller sur http://localhost:5601/app/sense
 
 On pourra donc durant ce hands-on utiliser au choix Sense (de préférence), ou `curl` dans son terminal.
 
-On notera que le port 9200 de la VM est rendu disponible sur la machine hôte : on peut donc utiliser ces plugins dans son navigateur, et toutes les commandes curl / http à venir seront exploitables depuis la machine hôte.
+On notera que les ports 9200 et 5601 de la VM sont rendus disponibles sur la machine hôte : on peut donc utiliser ces plugins dans son navigateur, et toutes les commandes curl / http à venir seront exploitables depuis la machine hôte.
 
 
 
