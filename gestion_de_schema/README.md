@@ -51,7 +51,7 @@ Essayons d'abord d'indexer un document :
  }
 ```
 
-Noter que la plupart des requêtes HTTP sont de la forme http://localhost:9200/<index_name>/<type_name>. Certaines se contentent du nom de l'index. 
+Noter que la plupart des requêtes HTTP sont de la forme http://localhost:9200/{index_name}/{type_name}. Certaines se contentent du nom de l'index. 
 
 
 Pour les exercices suivants, on pourra s'appuyer sur [cette page](http://www.elastic.co/guide/en/elasticsearch/guide/current/data-in-data-out.html).
