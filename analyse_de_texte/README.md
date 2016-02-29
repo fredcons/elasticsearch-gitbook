@@ -172,5 +172,34 @@ On peut ensuite référencer cet `analyzer` sur un champ du schéma :
 
 ## Exercices
 
+On va tâcher de créer un analyzer en vue d'obtenir des chaines de caractères spécifiques.
+
+Le modèle de création d'analyzer sera le suivant : 
+
+```
+curl -XPUT http://localhost:9200/my_index -d '
+{
+  "settings" : {
+    "number_of_shards"   : 5,
+    "number_of_replicas" : 0,
+    "analysis" : {
+      "filter" : {
+      
+      },
+      "tokenizer" : {
+        
+      },
+      "analyzer" : {
+        
+      }
+    }
+  }    
+}    
+'
+```
+
+
+
+
 
 
