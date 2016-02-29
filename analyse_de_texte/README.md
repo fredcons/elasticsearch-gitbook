@@ -205,11 +205,11 @@ curl -XPUT http://localhost:9200/my_index -d '
 Créer un `analyzer` qui permettre d'obtenir le résultat suivant : 
 
 ```
-curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AA28"
 {
   "tokens": [
     {
-      "token": "Ivre, il achète une imprimante HP-28",
+      "token": "Ivre, il achète une imprimante HP-AA28",
       "start_offset": 0,
       "end_offset": 36,
       "type": "word",
@@ -224,13 +224,13 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 Modifier l'`analyzer` précédent pour qu'il transforme le texte en lowercase
 
 ```
-curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AA28"
 {
   "tokens": [
     {
-      "token": "ivre, il achète une imprimante hp-28",
+      "token": "ivre, il achète une imprimante hp-aa28",
       "start_offset": 0,
-      "end_offset": 36,
+      "end_offset": 38,
       "type": "word",
       "position": 0
     }
@@ -244,7 +244,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 Modifier l'`analyzer` précédent pour qu'il tokenize sur des espaces, mais en filtrant les caractères de ponctuation (note: on pourrait utiliser le tokenizer par défault, mais on ne va pas le faire :) )
 
 ```
-curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AA28"
 {
   "tokens": [
     {
@@ -290,9 +290,9 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
       "position": 5
     },
     {
-      "token": "28",
+      "token": "aa28",
       "start_offset": 34,
-      "end_offset": 36,
+      "end_offset": 38,
       "type": "word",
       "position": 6
     }
@@ -305,7 +305,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 Modifier l'`analyzer` précédent pour qu'il supprime les accents, et indexe le radical des mots (via du stemming)
 
 ```
-curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AA28"
 
 ```
 
@@ -314,13 +314,13 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 Modifier l'`analyzer` précédent pour qu'il supprime le mot "une", et conserve le mot "imprimante" tel quel.
 
 ```
-curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AA28"
 
 ```
 
 #### Exercice 6.6
 
-Modifier l'`analyzer` précédent pour qu'il émetter à la fois "hp", "28" et "hp-28"
+Modifier l'`analyzer` précédent pour qu'il émetter à la fois "hp", "aa", "28" et "hp-aa28"
 
 #### Exercice 6.7
 
