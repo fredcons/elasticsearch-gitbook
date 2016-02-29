@@ -65,7 +65,7 @@ curl http://localhost:9200/crunchbase/_analyze?pretty&analyzer=tags -d "tag1, ta
 }
 ```
 
-La documentation de cet endpoint se trouve [ici](https://www.elastic.co/guide/en/elasticsearch/reference/1.7/indices-analyze.html).
+La documentation de cet endpoint se trouve [ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-lang-analyzer.html).
 
 ## Analyzers
 
