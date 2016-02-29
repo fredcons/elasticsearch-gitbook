@@ -184,13 +184,15 @@ curl -XPUT http://localhost:9200/my_index -d '
     "number_of_replicas" : 0,
     "analysis" : {
       "filter" : {
-      
+        
       },
       "tokenizer" : {
-        
+        "my_tokenizer" : ""  
       },
       "analyzer" : {
+        "my_analyzer" : {
         
+        }
       }
     }
   }    
@@ -203,13 +205,123 @@ curl -XPUT http://localhost:9200/my_index -d '
 Créer un analyzer qui permettre d'obtenir le résultat suivant : 
 
 ```
-curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d ""
-
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
 {
-
+  "tokens": [
+    {
+      "token": "Ivre, il achète une imprimante HP-28",
+      "start_offset": 0,
+      "end_offset": 36,
+      "type": "word",
+      "position": 0
+    }
+  ]
 }
 ```
 
+#### Exercice 5.2
+
+Modifier l'analyzer précédent pour qu'il transforme le texte en lowercase
+
+```
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
+{
+  "tokens": [
+    {
+      "token": "ivre, il achète une imprimante hp-28",
+      "start_offset": 0,
+      "end_offset": 36,
+      "type": "word",
+      "position": 0
+    }
+  ]
+}
+```
+
+#### Exercice 5.3
 
 
+Modifier l'analyzer précédent pour qu'il tokenize sur des espaces, mais en filtrant les caractères de ponctuation (note: on pourrait utiliser le tokeizer par défault, mais on ne va pas le faire :) )
 
+```
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
+{
+  "tokens": [
+    {
+      "token": "ivre",
+      "start_offset": 0,
+      "end_offset": 4,
+      "type": "word",
+      "position": 0
+    },
+    {
+      "token": "il",
+      "start_offset": 6,
+      "end_offset": 8,
+      "type": "word",
+      "position": 1
+    },
+    {
+      "token": "achète",
+      "start_offset": 9,
+      "end_offset": 15,
+      "type": "word",
+      "position": 2
+    },
+    {
+      "token": "une",
+      "start_offset": 16,
+      "end_offset": 19,
+      "type": "word",
+      "position": 3
+    },
+    {
+      "token": "imprimante",
+      "start_offset": 20,
+      "end_offset": 30,
+      "type": "word",
+      "position": 4
+    },
+    {
+      "token": "hp",
+      "start_offset": 31,
+      "end_offset": 33,
+      "type": "word",
+      "position": 5
+    },
+    {
+      "token": "28",
+      "start_offset": 34,
+      "end_offset": 36,
+      "type": "word",
+      "position": 6
+    }
+  ]
+}
+```
+
+#### Exercice 5.4
+
+Modifier l'analyzer précédent pour qu'il supprime les accents, et indexe le radical des mots (via du stemming)
+
+```
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
+
+```
+
+#### Exercice 5.5
+
+Modifier l'analyzer précédent pour qu'il supprime le mot "une", et indexe le radical des mots (via du stemming)
+
+```
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
+
+```
+
+#### Exercice 5.6
+
+Analyser ce texte avec l'analyzer par défaut
+
+#### Exercice 5.7
+
+Analyser ce texte avec l'analyzer français
