@@ -244,7 +244,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 Modifier l'`analyzer` précédent pour qu'il tokenize sur des espaces, mais en filtrant les caractères de ponctuation (note: on pourrait utiliser le tokenizer par défault, mais on ne va pas le faire :) )
 
 ```
-curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AA28"
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AB28"
 {
   "tokens": [
     {
@@ -290,7 +290,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
       "position": 5
     },
     {
-      "token": "aa",
+      "token": "ab",
       "start_offset": 34,
       "end_offset": 36,
       "type": "word",
@@ -312,7 +312,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 Modifier l'`analyzer` précédent pour qu'il supprime les accents, et indexe le radical des mots (via du stemming)
 
 ```
-curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AA28"
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AB28"
 {
   "tokens": [
     {
@@ -358,7 +358,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
       "position": 5
     },
     {
-      "token": "aa",
+      "token": "ab",
       "start_offset": 34,
       "end_offset": 36,
       "type": "word",
@@ -381,7 +381,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 Modifier l'`analyzer` précédent pour qu'il supprime le mot "une", et conserve le mot "imprimante" tel quel.
 
 ```
-curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AA28"
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AB28"
 {
   "tokens": [
     {
@@ -427,7 +427,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
       "position": 5
     },
     {
-      "token": "aa",
+      "token": "ab",
       "start_offset": 34,
       "end_offset": 36,
       "type": "word",
@@ -447,7 +447,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 
 #### Exercice 6.6
 
-Modifier l'`analyzer` précédent pour qu'il émette les tokens "hp", "aa28" et "hp-aa28"
+Modifier l'`analyzer` précédent pour qu'il émette les tokens "hp", "ab28" et "hp-ab28"
 
 ```
 {
@@ -495,7 +495,7 @@ Modifier l'`analyzer` précédent pour qu'il émette les tokens "hp", "aa28" et 
       "position": 4
     },
     {
-      "token": "hp-a28",
+      "token": "hp-ab28",
       "start_offset": 31,
       "end_offset": 38,
       "type": "word",
@@ -509,7 +509,7 @@ Modifier l'`analyzer` précédent pour qu'il émette les tokens "hp", "aa28" et 
       "position": 5
     },
     {
-      "token": "aa28",
+      "token": "ab28",
       "start_offset": 34,
       "end_offset": 38,
       "type": "word",
