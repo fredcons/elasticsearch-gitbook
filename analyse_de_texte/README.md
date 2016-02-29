@@ -325,3 +325,4 @@ Analyser ce texte avec l'analyzer par défaut
 #### Exercice 5.7
 
 Analyser ce texte avec l'analyzer français
+
