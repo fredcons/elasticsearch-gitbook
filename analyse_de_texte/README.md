@@ -307,6 +307,7 @@ Modifier l'`analyzer` précédent pour qu'il supprime les accents, et indexe le 
 ```
 curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AA28"
 
+
 ```
 
 #### Exercice 6.5
