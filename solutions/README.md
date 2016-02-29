@@ -565,10 +565,47 @@ On va ajouter un `filter` `stopwords`, et un `filter` `keyword_marker`, chacun a
 
 #### Exercice 6.6
 
-On va configurer le `filter` `word_delimiter` pour qu'il émette aussi la chaine originelle en plus du travail de tokenization réalisé. 
+On va configurer le `filter` `word_delimiter` pour qu'il émette aussi la chaine originelle en plus du travail de tokenization réalisé, et qu'il ne splitte pas sur le passage de lettre à chiffre. 
 
 ```
-
+{
+  "settings" : {
+    "analysis" : {
+      "filter":  {
+        "my_french_stemmer" : {
+          "type" : "stemmer",
+          "name" : "light_french"
+        },
+        "my_stop": {
+          "type":       "stop",
+          "stopwords": ["une"]
+        },
+        "my_protected_words" : {
+          "type" : "keyword_marker",
+          "keywords" : [ "imprimante" ]
+        },
+        "my_word_delimiter" : {
+           "type" : "word_delimiter",
+           "preserve_original" : true,
+           "split_on_numerics" : false
+        }
+      },
+      "analyzer" : {
+        "my_analyzer" : {
+          "tokenizer" : "whitespace",
+          "filter" : [
+            "lowercase",
+            "my_word_delimiter",
+            "stop",
+            "asciifolding",
+            "my_protected_words",
+            "my_french_stemmer"
+          ]
+        }
+      }
+    }
+  }    
+} 
 ```
 
 #### Exercice 6.7
