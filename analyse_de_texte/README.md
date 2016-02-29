@@ -172,9 +172,9 @@ On peut ensuite référencer cet `analyzer` sur un champ du schéma :
 
 ## Exercices
 
-On va tâcher de créer un analyzer en vue d'obtenir des chaines de caractères spécifiques.
+On va tâcher de créer un `analyzer` en vue d'obtenir des chaines de caractères spécifiques.
 
-Le modèle de création d'analyzer sera le suivant : 
+Le modèle de création d'`analyzer` sera le suivant : 
 
 ```
 curl -XPUT http://localhost:9200/my_index -d '
@@ -187,7 +187,7 @@ curl -XPUT http://localhost:9200/my_index -d '
         
       },
       "tokenizer" : {
-        "my_tokenizer" : ""  
+        
       },
       "analyzer" : {
         "my_analyzer" : {
