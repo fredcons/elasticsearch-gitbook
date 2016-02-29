@@ -427,5 +427,158 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
 }'
 ```
 
+#### Exercice 6.1
 
+On va utiliser le `tokenizer` `keyword`, qui ne tokenise pas le texte, et le laisse tel quel : 
+
+```
+curl -XGET http://localhost:9200/my_index/ -d '{
+  "settings" : {
+    "analysis" : {
+      "analyzer" : {
+        "my_analyzer" : {
+          "tokenizer" : "keyword"
+        }
+      }
+    }
+  }    
+} 
+'
+```
+
+#### Exercice 6.2
+
+On va ajouter à l'`analyzer` précédent un `filter` `lowercase` : 
+
+```
+curl -XGET http://localhost:9200/my_index/ -d '{
+  "settings" : {
+    "analysis" : {
+      "analyzer" : {
+        "my_analyzer" : {
+          "tokenizer" : "keyword",
+          "filter" : [
+            "lowercase"
+          ]
+        }
+      }
+    }
+  }    
+} 
+'
+```
+
+
+#### Exercice 6.6
+
+Il suffit pour cela d'utiliser l'endpoint `_analyze` sans paramètre :
+
+```
+curl -XGET http://localhost:9200/my_index/_analyze?pretty -d '{
+  "text" : "Ivre, il achète une imprimante HP-28" 
+  {
+  "tokens": [
+    {
+      "token": "ivre",
+      "start_offset": 0,
+      "end_offset": 4,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "il",
+      "start_offset": 6,
+      "end_offset": 8,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "achète",
+      "start_offset": 9,
+      "end_offset": 15,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "une",
+      "start_offset": 16,
+      "end_offset": 19,
+      "type": "<ALPHANUM>",
+      "position": 3
+    },
+    {
+      "token": "imprimante",
+      "start_offset": 20,
+      "end_offset": 30,
+      "type": "<ALPHANUM>",
+      "position": 4
+    },
+    {
+      "token": "hp",
+      "start_offset": 31,
+      "end_offset": 33,
+      "type": "<ALPHANUM>",
+      "position": 5
+    },
+    {
+      "token": "28",
+      "start_offset": 34,
+      "end_offset": 36,
+      "type": "<NUM>",
+      "position": 6
+    }
+  ]
+}
+```
+
+#### Exercice 6.7
+
+Il existe pour chaque langage majeur un `analyzer` dédié, nommé comme le langage :
+
+```
+curl -XGET http://localhost:9200/my_index/_analyze?pretty&analyzer=french -d '{
+  "text" : "Ivre, il achète une imprimante HP-28" 
+}
+{
+  "tokens": [
+    {
+      "token": "ivre",
+      "start_offset": 0,
+      "end_offset": 4,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "achet",
+      "start_offset": 9,
+      "end_offset": 15,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "imprimant",
+      "start_offset": 20,
+      "end_offset": 30,
+      "type": "<ALPHANUM>",
+      "position": 4
+    },
+    {
+      "token": "hp",
+      "start_offset": 31,
+      "end_offset": 33,
+      "type": "<ALPHANUM>",
+      "position": 5
+    },
+    {
+      "token": "28",
+      "start_offset": 34,
+      "end_offset": 36,
+      "type": "<NUM>",
+      "position": 6
+    }
+  ]
+}
+```
+
+Le dtéail de cet `analyzer` se trouve [ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-lang-analyzer.html#french-analyzer)
 
