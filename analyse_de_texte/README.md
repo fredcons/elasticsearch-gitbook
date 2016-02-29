@@ -320,7 +320,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 
 #### Exercice 6.6
 
-Modifier l'`analyzer` précédent
+Modifier l'`analyzer` précédent pour qu'il émetter à la fois "hp", "28" et "hp-28"
 
 #### Exercice 6.7
 
