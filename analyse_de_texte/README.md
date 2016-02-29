@@ -205,11 +205,11 @@ curl -XPUT http://localhost:9200/my_index -d '
 Créer un `analyzer` qui permettre d'obtenir le résultat suivant : 
 
 ```
-curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AA28"
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AB28"
 {
   "tokens": [
     {
-      "token": "Ivre, il achète une imprimante HP-AA28",
+      "token": "Ivre, il achète une imprimante HP-AB28",
       "start_offset": 0,
       "end_offset": 36,
       "type": "word",
@@ -224,11 +224,11 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 Modifier l'`analyzer` précédent pour qu'il transforme le texte en lowercase
 
 ```
-curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AA28"
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-AB28"
 {
   "tokens": [
     {
-      "token": "ivre, il achète une imprimante hp-aa28",
+      "token": "ivre, il achète une imprimante hp-ab28",
       "start_offset": 0,
       "end_offset": 38,
       "type": "word",
