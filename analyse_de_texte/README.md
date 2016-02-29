@@ -77,7 +77,7 @@ Comme vu plus haut, un `analyzer` se compose:
 - d'une chaine de `tokenfilters` qui travaillent au niveau de chaque terme émis par le `tokenizer`
 - de `charfilters` qui permettent de transformer des caractères (on va les laisser de coté)
  
-ES propose entre autres les `analyzer`s `standard`, `whitespace`, ainsi que des `analyzer`s [par langage](https://www.elastic.co/guide/en/elasticsearch/reference/1.7/analysis-lang-analyzer.html), mais la plupart du temps, il va falloir définir soi-même un ou plusieurs analyzers customs.
+ES propose entre autres les `analyzer`s `standard`, `whitespace`, ainsi que des `analyzer`s [par langage](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-lang-analyzer.html), mais la plupart du temps, il va falloir définir soi-même un ou plusieurs analyzers customs.
 
 
 ## Tokenizers
