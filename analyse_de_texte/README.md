@@ -91,7 +91,7 @@ Il faut donc décider qu'est ce qui délimite les `tokens`, et ES propose plusie
 - le tokenizer `pattern`, vu ci-dessus, qui va s'appuyer sur une expression régulière
 - et d'autres encore
 
-La liste complète est disponible [ici](https://www.elastic.co/guide/en/elasticsearch/reference/1.7/analysis-tokenizers.html).
+La liste complète est disponible [ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-tokenizers.html).
 
 
 ## Tokenfilters
@@ -105,7 +105,7 @@ Les filtres de base incluent :
 - `keyword` qui va préserver des termes
 - `stopwords` qui va supprimer des mots
 - `stemming` qui va réduire le mot à sa racine
-- et [bien d'autres](https://www.elastic.co/guide/en/elasticsearch/reference/1.7/analysis-tokenfilters.html)
+- et [bien d'autres](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-tokenfilters.html)
  
 
 
@@ -171,4 +171,6 @@ On peut ensuite référencer cet `analyzer` sur un champ du schéma :
 
 
 ## Exercices
+
+
 
