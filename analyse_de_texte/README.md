@@ -450,7 +450,73 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 Modifier l'`analyzer` précédent pour qu'il émetterles tokens "hp", "aa28", "hp-aa28" et "hpaa28"
 
 ```
-
+{
+  "tokens": [
+    {
+      "token": "ivre,",
+      "start_offset": 0,
+      "end_offset": 5,
+      "type": "word",
+      "position": 0
+    },
+    {
+      "token": "ivre",
+      "start_offset": 0,
+      "end_offset": 4,
+      "type": "word",
+      "position": 0
+    },
+    {
+      "token": "il",
+      "start_offset": 6,
+      "end_offset": 8,
+      "type": "word",
+      "position": 1
+    },
+    {
+      "token": "achet",
+      "start_offset": 9,
+      "end_offset": 15,
+      "type": "word",
+      "position": 2
+    },
+    {
+      "token": "une",
+      "start_offset": 16,
+      "end_offset": 19,
+      "type": "word",
+      "position": 3
+    },
+    {
+      "token": "imprimante",
+      "start_offset": 20,
+      "end_offset": 30,
+      "type": "word",
+      "position": 4
+    },
+    {
+      "token": "hp-a28",
+      "start_offset": 31,
+      "end_offset": 38,
+      "type": "word",
+      "position": 5
+    },
+    {
+      "token": "hp",
+      "start_offset": 31,
+      "end_offset": 33,
+      "type": "word",
+      "position": 5
+    },
+    {
+      "token": "aa28",
+      "start_offset": 34,
+      "end_offset": 38,
+      "type": "word",
+      "position": 6
+    }
+  ]
+}
 ```
 
 #### Exercice 6.7
