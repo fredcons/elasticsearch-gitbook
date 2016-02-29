@@ -200,7 +200,7 @@ curl -XPUT http://localhost:9200/my_index -d '
 '
 ```
 
-#### Exercice 5.1
+#### Exercice 6.1
 
 Créer un analyzer qui permettre d'obtenir le résultat suivant : 
 
@@ -219,7 +219,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 }
 ```
 
-#### Exercice 5.2
+#### Exercice 6.2
 
 Modifier l'analyzer précédent pour qu'il transforme le texte en lowercase
 
@@ -238,7 +238,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 }
 ```
 
-#### Exercice 5.3
+#### Exercice 6.3
 
 
 Modifier l'analyzer précédent pour qu'il tokenize sur des espaces, mais en filtrant les caractères de ponctuation (note: on pourrait utiliser le tokeizer par défault, mais on ne va pas le faire :) )
@@ -300,7 +300,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 }
 ```
 
-#### Exercice 5.4
+#### Exercice 6.4
 
 Modifier l'analyzer précédent pour qu'il supprime les accents, et indexe le radical des mots (via du stemming)
 
@@ -309,20 +309,20 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 
 ```
 
-#### Exercice 5.5
+#### Exercice 6.5
 
-Modifier l'analyzer précédent pour qu'il supprime le mot "une", et indexe le radical des mots (via du stemming)
+Modifier l'analyzer précédent pour qu'il supprime le mot "une"
 
 ```
 curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
 
 ```
 
-#### Exercice 5.6
+#### Exercice 6.6
 
 Analyser ce texte avec l'analyzer par défaut
 
-#### Exercice 5.7
+#### Exercice 6.7
 
 Analyser ce texte avec l'analyzer français
 
