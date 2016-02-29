@@ -468,6 +468,101 @@ curl -XGET http://localhost:9200/my_index/ -d '{
 '
 ```
 
+#### Exercice 6.3
+
+On va modifier  l'`analyzer` précédent en utilisant un `tokenizer` `whitespace`, avec un `filter` `word_delimiter` pour éliminer la virgule après "Ivre". On laisse le filtre `lowercase`
+
+```
+{
+  "settings" : {
+    "analysis" : {
+      "analyzer" : {
+        "my_analyzer" : {
+          "tokenizer" : "whitespace",
+          "filter" : [
+            "lowercase",
+            "word_delimiter"
+          ]
+        }
+      }
+    }
+  }    
+}  
+```
+
+#### Exercice 6.4
+
+On va ajouter à l'`analyzer` précédent un `filter` `asciifolding`, et un `filter` `stemmer`, configuré pour le français : 
+
+```
+{
+  "settings" : {
+    "analysis" : {
+      "filter":  {
+        "my_french_stemmer" : {
+          "type" : "stemmer",
+          "name" : "light_french"
+        }  
+      },
+      "analyzer" : {
+        "my_analyzer" : {
+          "tokenizer" : "whitespace",
+          "filter" : [
+            "lowercase",
+            "word_delimiter",
+            "asciifolding",
+            "my_french_stemmer"
+          ]
+        }
+      }
+    }
+  }    
+}  
+```
+
+
+#### Exercice 6.5
+
+On va ajouter un `filter` `stopwords`, et un `filter` `keyword_marker`, chacun avec la bonne liste de mots.
+
+
+```
+{
+  "settings" : {
+    "analysis" : {
+      "filter":  {
+        "my_french_stemmer" : {
+          "type" : "stemmer",
+          "name" : "light_french"
+        },
+        "my_stop": {
+          "type":       "stop",
+          "stopwords": ["une"]
+        },
+        "my_protected_words" : {
+          "type" : "keyword_marker",
+          "keywords" : [ "imprimante" ]
+        }
+      },
+      "analyzer" : {
+        "my_analyzer" : {
+          "tokenizer" : "whitespace",
+          "filter" : [
+            "lowercase",
+            "word_delimiter",
+            "stop",
+            "asciifolding",
+            "my_protected_words",
+            "my_french_stemmer"
+          ]
+        }
+      }
+    }
+  }    
+}  
+
+```
+
 
 #### Exercice 6.6
 
