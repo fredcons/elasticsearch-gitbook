@@ -290,11 +290,18 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
       "position": 5
     },
     {
-      "token": "aa28",
+      "token": "aa",
       "start_offset": 34,
-      "end_offset": 38,
+      "end_offset": 36,
       "type": "word",
       "position": 6
+    },
+    {
+      "token": "28",
+      "start_offset": 36,
+      "end_offset": 38,
+      "type": "word",
+      "position": 7
     }
   ]
 }
