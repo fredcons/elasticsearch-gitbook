@@ -447,7 +447,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 
 #### Exercice 6.6
 
-Modifier l'`analyzer` précédent pour qu'il émetterles tokens "hp", "aa28", "hp-aa28" et "hpaa28"
+Modifier l'`analyzer` précédent pour qu'il émette les tokens "hp", "aa28" et "hp-aa28"
 
 ```
 {
