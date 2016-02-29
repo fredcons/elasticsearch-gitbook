@@ -567,6 +567,9 @@ On va ajouter un `filter` `stopwords`, et un `filter` `keyword_marker`, chacun a
 
 On va configurer le `filter` `word_delimiter` pour qu'il émette aussi la chaine originelle en plus du travail de tokenization réalisé. 
 
+```
+
+```
 
 #### Exercice 6.7
 
