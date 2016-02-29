@@ -450,7 +450,44 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 Modifier l'`analyzer` précédent pour qu'il émetterles tokens "hp", "aa28", "hp-aa28" et "hpaa28"
 
 ```
-
+{
+  "settings" : {
+    "analysis" : {
+      "filter":  {
+        "my_french_stemmer" : {
+          "type" : "stemmer",
+          "name" : "light_french"
+        },
+        "my_stop": {
+          "type":       "stop",
+          "stopwords": ["une"]
+        },
+        "my_protected_words" : {
+          "type" : "keyword_marker",
+          "keywords" : [ "imprimante" ]
+        },
+        "my_word_delimiter" : {
+           "type" : "word_delimiter",
+           "preserve_original" : true,
+           "split_on_numerics" : false
+        }
+      },
+      "analyzer" : {
+        "my_analyzer" : {
+          "tokenizer" : "whitespace",
+          "filter" : [
+            "lowercase",
+            "my_word_delimiter",
+            "stop",
+            "asciifolding",
+            "my_protected_words",
+            "my_french_stemmer"
+          ]
+        }
+      }
+    }
+  }    
+} 
 ```
 
 #### Exercice 6.7
