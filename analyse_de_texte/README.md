@@ -198,7 +198,17 @@ curl -XPUT http://localhost:9200/my_index -d '
 '
 ```
 
+#### Exercice 5.1
 
+Créer un analyzer qui permettre d'obtenir le résultat suivant : 
+
+```
+curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d ""
+
+{
+
+}
+```
 
 
 
