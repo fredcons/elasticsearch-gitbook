@@ -563,8 +563,12 @@ On va ajouter un `filter` `stopwords`, et un `filter` `keyword_marker`, chacun a
 
 ```
 
-
 #### Exercice 6.6
+
+On va configurer le `filter` `word_delimiter` pour qu'il émette aussi la chaine originelle en plus du travail de tokenization réalisé. 
+
+
+#### Exercice 6.7
 
 Il suffit pour cela d'utiliser l'endpoint `_analyze` sans paramètre :
 
@@ -626,7 +630,7 @@ curl -XGET http://localhost:9200/my_index/_analyze?pretty -d '{
 }
 ```
 
-#### Exercice 6.7
+#### Exercice 6.8
 
 Il existe pour chaque langage majeur un `analyzer` dédié, nommé comme le langage :
 
