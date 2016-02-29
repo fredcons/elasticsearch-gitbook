@@ -202,7 +202,7 @@ curl -XPUT http://localhost:9200/my_index -d '
 
 #### Exercice 6.1
 
-Créer un analyzer qui permettre d'obtenir le résultat suivant : 
+Créer un `analyzer` qui permettre d'obtenir le résultat suivant : 
 
 ```
 curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
@@ -221,7 +221,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 
 #### Exercice 6.2
 
-Modifier l'analyzer précédent pour qu'il transforme le texte en lowercase
+Modifier l'`analyzer` précédent pour qu'il transforme le texte en lowercase
 
 ```
 curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
@@ -241,7 +241,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 #### Exercice 6.3
 
 
-Modifier l'analyzer précédent pour qu'il tokenize sur des espaces, mais en filtrant les caractères de ponctuation (note: on pourrait utiliser le tokeizer par défault, mais on ne va pas le faire :) )
+Modifier l'`analyzer` précédent pour qu'il tokenize sur des espaces, mais en filtrant les caractères de ponctuation (note: on pourrait utiliser le tokenizer par défault, mais on ne va pas le faire :) )
 
 ```
 curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
@@ -302,7 +302,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 
 #### Exercice 6.4
 
-Modifier l'analyzer précédent pour qu'il supprime les accents, et indexe le radical des mots (via du stemming)
+Modifier l'`analyzer` précédent pour qu'il supprime les accents, et indexe le radical des mots (via du stemming)
 
 ```
 curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
@@ -311,7 +311,7 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 
 #### Exercice 6.5
 
-Modifier l'analyzer précédent pour qu'il supprime le mot "une"
+Modifier l'`analyzer` précédent pour qu'il supprime le mot "une", et conserve le mot "imprimante" tel quel.
 
 ```
 curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivre, il achète une imprimante HP-28"
@@ -320,9 +320,13 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
 
 #### Exercice 6.6
 
-Analyser ce texte avec l'analyzer par défaut
+Modifier l'`analyzer` précédent
 
 #### Exercice 6.7
 
-Analyser ce texte avec l'analyzer français
+Analyser ce texte avec l'`analyzer` par défaut
+
+#### Exercice 6.8
+
+Analyser ce texte avec l'`analyzer` français
 
