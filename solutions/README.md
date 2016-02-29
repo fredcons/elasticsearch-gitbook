@@ -574,7 +574,7 @@ Il suffit pour cela d'utiliser l'endpoint `_analyze` sans paramètre :
 
 ```
 curl -XGET http://localhost:9200/my_index/_analyze?pretty -d '{
-  "text" : "Ivre, il achète une imprimante HP-28" 
+  "text" : "Ivre, il achète une imprimante HP-AA28" 
   {
   "tokens": [
     {
@@ -620,9 +620,9 @@ curl -XGET http://localhost:9200/my_index/_analyze?pretty -d '{
       "position": 5
     },
     {
-      "token": "28",
+      "token": "aa28",
       "start_offset": 34,
-      "end_offset": 36,
+      "end_offset": 38,
       "type": "<NUM>",
       "position": 6
     }
@@ -636,7 +636,7 @@ Il existe pour chaque langage majeur un `analyzer` dédié, nommé comme le lang
 
 ```
 curl -XGET http://localhost:9200/my_index/_analyze?pretty&analyzer=french -d '{
-  "text" : "Ivre, il achète une imprimante HP-28" 
+  "text" : "Ivre, il achète une imprimante HP-AA28" 
 }
 {
   "tokens": [
@@ -669,7 +669,7 @@ curl -XGET http://localhost:9200/my_index/_analyze?pretty&analyzer=french -d '{
       "position": 5
     },
     {
-      "token": "28",
+      "token": "aa28",
       "start_offset": 34,
       "end_offset": 36,
       "type": "<NUM>",
@@ -679,5 +679,5 @@ curl -XGET http://localhost:9200/my_index/_analyze?pretty&analyzer=french -d '{
 }
 ```
 
-Le dtéail de cet `analyzer` se trouve [ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-lang-analyzer.html#french-analyzer)
+Le détail de cet `analyzer` se trouve [ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-lang-analyzer.html#french-analyzer)
 
