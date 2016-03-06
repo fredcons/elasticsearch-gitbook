@@ -131,4 +131,4 @@ Obtenir pour les entreprises fondéees entre 2000 et 2015 (`founded_year`) les 5
 
 #### Exercice 5.4
 
-Dans la même requête, rechercher les entreprises dont l'IPO a été réalisée en 2012`, et afficher le nombre d'IPO par année (champ `ipo.pub_year`) pour les entreprises fondées entre 2000 et 2015.
+Dans la même requête, rechercher les entreprises dont l'IPO a été réalisée en 2012, et afficher le nombre d'IPO par année (champ `ipo.pub_year`) pour les entreprises fondées entre 2000 et 2015.
