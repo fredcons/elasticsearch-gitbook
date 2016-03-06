@@ -320,6 +320,12 @@ Hint : on ne fait que _filtrer_ les données
 Quelles sont les startups possédant des bureaux en Californie (soit `offices.state_code` == 'CA') et taggées "video" ?
 Hint : le champ `offices` est `nested`
 
+#### Exercice 4.5 :
+
+Reprendre la requête 4.2 : 
+- en ajoutant aux résultats des informations sur le calcul du score
+- en ajoutant aux résultats des informations sur le temps d'exécution
+- en ajoutant un `highlight` en italique sur les résultats 
 
 
 

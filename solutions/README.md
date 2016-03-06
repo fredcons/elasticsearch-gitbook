@@ -372,6 +372,38 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
 }'
 ```
 
+### Exercice 4.5
+
+
+On reprend donc la même requête en lui ajoutant plusieurs éléments :
+- un paramètre de querystring `explain=` qui, pour chaque résultat, va inclure le détail de calcul du score de pertinence 
+- un paramètre de query `profile : true` (nouveau en 2.2), donnant le détail des différentes phases d'exécution sur chaque shard
+- une section `highlight` qui permet de configurer la restitution du highlight
+
+Ce qui donne :
+
+```
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty=&explain= -d '{
+  "profile" : true,
+  "query" : {
+    "multi_match" : {
+      "query":    "innovation",
+      "fields": [ "name^1.2", "tag_list" ]
+    }
+  },
+  "fields" : [ "name", "tag_list" ],
+  "size": 10,
+  "highlight": {
+    "fields": {
+      "name" : {},
+      "tag_list": {}
+    },
+    "pre_tags": [ "<b>" ],
+    "post_tags": [ "</b>" ]
+  }
+}
+```
+
 #### Exercice 5.1
 
 Il existe deux agrégations pour des mesures statistiques : `stats` et `extended_stats`. `extended_stats` permet d'obtenir des mesures supplémentaires (variance par exemple).
