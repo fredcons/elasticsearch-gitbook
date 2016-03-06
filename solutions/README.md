@@ -404,7 +404,7 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty=&explain= -
 }
 ```
 
-#### Exercice 5.1
+### Exercice 5.1
 
 Il existe deux agrégations pour des mesures statistiques : `stats` et `extended_stats`. `extended_stats` permet d'obtenir des mesures supplémentaires (variance par exemple).
 Pour les percentiles, il va falloir une deuxième agrégation nommée `percentiles`
@@ -426,7 +426,7 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
 }'
 ```
 
-#### Exercice 5.2
+### Exercice 5.2
 
 On va utiliser `histogram` en spécifiant un interval de 1
 (note : si on avait un champ date correctement formatté, on pourrait utiliser un `date_histogram`
@@ -447,7 +447,7 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
 
 On peut aussi exécuter cette requête avec un intervalle de 10 pour voir les IPO par décennie.
 
-#### Exercice 5.3
+### Exercice 5.3
 
 Il va falloir imbriquer des agrégations : d'abord agréger via des `terms` sur la `founded_year` (en triant par date), puis pour chaque date agréger via des `terms` sur `tag_list` (en laissant le tri par défaut par valeur décroissante, et en limitant à cinq valeurs).
 On va réaliser cela en imbriquant des éléments `aggs`
@@ -482,7 +482,38 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
 }'
 ```
 
-#### Exercice 6.1
+### Exercice 5.4
+
+Pour cet exercice , il va falloir dissocier l'agrégation du scope de la query.
+On va utiliser l'agrégation `global` : 
+
+```
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{ 
+  "query" : {
+    "term" : {
+      "ipo.pub_year":    "2012"
+    }
+  },
+  "fields" : [ "name", "ipo.pub_year" ],
+  "size": 10,
+  "aggs": {
+    "all_companies": {
+      "global": {},
+      "aggs": {
+        "founded_year" : {
+          "terms" : {
+            "field" : "founded_year",
+            "order" : { "_term" : "desc" },
+            "size" : 30
+          }
+        }  
+      } 
+    }
+  }
+}
+```
+
+### Exercice 6.1
 
 On va utiliser le `tokenizer` `keyword`, qui ne tokenise pas le texte, et le laisse tel quel : 
 
@@ -501,7 +532,7 @@ curl -XGET http://localhost:9200/my_index/ -d '{
 '
 ```
 
-#### Exercice 6.2
+### Exercice 6.2
 
 On va ajouter à l'`analyzer` précédent un `filter` `lowercase` : 
 
@@ -523,7 +554,7 @@ curl -XGET http://localhost:9200/my_index/ -d '{
 '
 ```
 
-#### Exercice 6.3
+### Exercice 6.3
 
 On va modifier  l'`analyzer` précédent en utilisant un `tokenizer` `whitespace`, avec un `filter` `word_delimiter` pour éliminer la virgule après "Ivre". On laisse le filtre `lowercase`
 
@@ -545,7 +576,7 @@ On va modifier  l'`analyzer` précédent en utilisant un `tokenizer` `whitespace
 }  
 ```
 
-#### Exercice 6.4
+### Exercice 6.4
 
 On va ajouter à l'`analyzer` précédent un `filter` `asciifolding`, et un `filter` `stemmer`, configuré pour le français : 
 
@@ -576,7 +607,7 @@ On va ajouter à l'`analyzer` précédent un `filter` `asciifolding`, et un `fil
 ```
 
 
-#### Exercice 6.5
+### Exercice 6.5
 
 On va ajouter un `filter` `stopwords`, et un `filter` `keyword_marker`, chacun avec la bonne liste de mots.
 
@@ -618,7 +649,7 @@ On va ajouter un `filter` `stopwords`, et un `filter` `keyword_marker`, chacun a
 
 ```
 
-#### Exercice 6.6
+### Exercice 6.6
 
 On va configurer le `filter` `word_delimiter` pour qu'il émette aussi la chaine originelle en plus du travail de tokenization réalisé, et qu'il ne splitte pas sur le passage de lettre à chiffre. 
 
@@ -663,7 +694,7 @@ On va configurer le `filter` `word_delimiter` pour qu'il émette aussi la chaine
 } 
 ```
 
-#### Exercice 6.7
+### Exercice 6.7
 
 Il suffit pour cela d'utiliser l'endpoint `_analyze` sans paramètre :
 
@@ -725,7 +756,7 @@ curl -XGET http://localhost:9200/my_index/_analyze?pretty -d '{
 }
 ```
 
-#### Exercice 6.8
+### Exercice 6.8
 
 Il existe pour chaque langage majeur un `analyzer` dédié, nommé comme le langage :
 
