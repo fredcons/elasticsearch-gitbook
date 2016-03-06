@@ -500,13 +500,22 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
     "all_companies": {
       "global": {},
       "aggs": {
-        "founded_year" : {
-          "terms" : {
-            "field" : "founded_year",
-            "order" : { "_term" : "desc" },
-            "size" : 30
+        "from2000to2015" : {
+          "filter": {
+            "range": { 
+              "founded_year": { "gte": 2000 }, "founded_year": { "lte": 2015 }              
+            }
+          },
+          "aggs": {
+            "founded_year" : {
+              "terms" : {
+                "field" : "founded_year",
+                "order" : { "_term" : "desc" },
+                "size" : 15
+              }
+            }
           }
-        }  
+        }
       } 
     }
   }
