@@ -328,6 +328,75 @@ Reprendre la requête 4.2 :
 - en ajoutant un `highlight` en italique sur les résultats 
 
 
+## Features additionnelles
+
+Outre la recherche "classique" par DSL, Elasticsearch fournit des fonctionalités annexes qu'il est bon de connaitre.
+
+### Geosearch
+
+Elasticsearch propose des types de données permettant de modéliser différentes informations géographiques : un point particulier avec `geopoint`, des zones entières avec `geo_shape`.  
+On peut ensuite filter / rechercher / agréger des documents en se basant sur leur localisation géographique.
+
+### Suggest
+
+La fonctionnalité [`suggest`](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-suggesters.html) permet de trouver des chaines de caractères proches du texte recherché.
+Elle peut être utilisée : 
+- pour de la correction orthographique
+
+```
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
+  "size": 0,
+  "suggest" : {
+    "name_suggestion" : {
+      "text" : "tiwtter",
+      "term" : {
+        "size" : 3,
+        "field" : "name"
+      }
+    }
+  }
+}
+{
+  ...
+  "suggest": {
+    "name_suggestion": [
+      {
+        "text": "tiwtter",
+        "offset": 0,
+        "length": 7,
+        "options": [
+          {
+            "text": "twitter",
+            "score": 0.85714287,
+            "freq": 6
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+- pour de l'autocomplétion (ce qui nécessite un mapping spécial).
+
+
+
+### Scoring avancé
+
+On n'a fait que survoler la notion de score. Actuellement basé sur TFIDF, le socre par défaut sera bientôt calculé avec BM25.  
+Mais au-delà de ces formules basées sur la fréquence des termes dans les documents et le corpus entier, il est possible d'utiliser la valeur des champs des documents pour reclaclueer / influencer le score.  
+Des exemples possibles d'usage sont : 
+- favoriser les documents les plus récents dans un moteur de recherche d'articles de presse
+- favoriser les produits les plus vendus sur un site e-commerce 
+On utilisera pour cela la `query` [`function_score`](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-function-score-query.html).
+
+### Percolator
+
+Le [`percolator`](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-percolate.html) inverse le mécanisme de recherche standard : 
+- on enregistre des requêtes
+- on regarde ensuite pour un document donné si des requêtes enregistrées matchent ou pas ce document
+Ce système peut être utilisé pour construire un mécanisme d'alerting.
+
 
 
 
