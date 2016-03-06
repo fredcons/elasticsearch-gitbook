@@ -129,3 +129,6 @@ Obtenir un histogramme du nombre d'IPO par année (champ `ipo.pub_year`), puis p
 
 Obtenir pour les entreprises fondéees entre 2000 et 2015 (`founded_year`) les 5 tags (`tag_list`) les plus utilisés pour chaque année
 
+#### Exercice 5.4
+
+Dans la même requête, rechercher les entreprises dont l'ipo a été réalisée en 2012`, et afficher le nombre d'IPO par année (champ `ipo.pub_year`) pour les entreprises fondées entre 2000 et 2015.
