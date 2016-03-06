@@ -127,7 +127,7 @@ Si cela permet de rapidement commencer à jouer avec l'outil, il est difficileme
 Les enjeux principaux lorsqu'on définit un champ sont les suivants :
 - quel est le type de ce champ ? Un champ numérique ne doit pas être indexé comme une string. Il faut donc spécifier le type correct pour ce champ.
 - que veut-on faire de ce champ ? Effectuer une recherche exacte ?  Effectuer une recherche textuelle plus complexe ? Le récupérer ou juste l'utiliser dans une recherche ?  Il faut donc spécifier la manière dont on veut analyser ce champ.
-- quelle est la structure de l'objet stocké ? Au delà des types standards JSON (string, boolean, int...), ES peut également gérer des tableaux de ces types, voire utiliser des "nested objects" pour des structures plus complexes.
+- quelle est la structure de l'objet stocké ? Au delà des types standards JSON (string, boolean, int...), ES peut également gérer des tableaux de ces types, voire utiliser des "nested objects" ou des relations "parent / child" pour des structures plus complexes.
 
 
 Pour les exercices suivants, on pourra s'appuyer sur [le guide du mapping](http://www.elastic.co/guide/en/elasticsearch/guide/current/mapping-analysis.html).
