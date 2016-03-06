@@ -5,18 +5,18 @@ Outre sa fonction de moteur de recherche, Elasticsearch offre des fonctionnalit�
 
 ## Les concepts
 
-Une agrégation se définit par : 
-- un ou plusieurs "buckets" : ce sont les "catégories" dans lequelles on va ranger les résultats. Un type d'agrégation peut avoir un bucket (ex : `stats`) ou plusieurs (ex : `terms`).
-- une métrique obtenue à partir des résultats de chaque bucket, par exemple leur nombre. 
+Les agrégations peuvent être de deux types :
+- le type "buckets" : les "buckets" sont des "catégories" dans lequelles on va ranger les résultats, et associer à chaque catégorie un compteur.
+- le type "metric", qui offre une ou plusieurs valeurs obtenues à partir des résultats de l'agrégation, par exemple leur nombre, la valeur max, etc... 
 
 Il est à noter que ce système d'agrégation peut être utilisé seul, ou en combinaison avec une recherche textuelle ou toute autre query.  
-Par ailleurs, on peut demander plusieurs agrégations dans une seule requête, ou des agrégations hiérarchiques (c'est-à-dire imbriquées les une dans les autres).
+Par ailleurs, on peut demander plusieurs agrégations dans une seule requête, ou des agrégations hiérarchiques (c'est-à-dire imbriquées les une dans les autres, possiblement en combinant des buckets et des metrics).
 
 ## Structure d'une agrégation
 
 Une agrégation se définit dans un document JSON similaire à celui d'une requête.
 
-Voici un exemple d'agrégation multi-bucket : compter le nombre de startups pour chaque tag :
+Voici un exemple d'agrégation "buckets", qui compte le nombre de startups pour chaque tag :
 
 ```
 curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
@@ -131,4 +131,4 @@ Obtenir pour les entreprises fondéees entre 2000 et 2015 (`founded_year`) les 5
 
 #### Exercice 5.4
 
-Dans la même requête, rechercher les entreprises dont l'ipo a été réalisée en 2012`, et afficher le nombre d'IPO par année (champ `ipo.pub_year`) pour les entreprises fondées entre 2000 et 2015.
+Dans la même requête, rechercher les entreprises dont l'IPO a été réalisée en 2012`, et afficher le nombre d'IPO par année (champ `ipo.pub_year`) pour les entreprises fondées entre 2000 et 2015.
