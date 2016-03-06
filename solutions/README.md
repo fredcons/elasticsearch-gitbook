@@ -295,13 +295,12 @@ On n'a pas ici besoin de scoring: on va donc utiliser des filtres.
 Par ailleurs, il faudra filtrer à la fois sur le montant de l'IPO et sur sa currency, à travers l'utilisation d'un filtre `bool`.
 On notera qu'on peut naviguer sur un sous-objet (ipo) sans configuration particulière.
 
+Pour les version pre-2.0 d'Elasticsearch, on utilise une `query` de type `filtered` : 
+
 ```
 curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "query" : {
     "filtered": {
-      "query": {
-        "match_all": {  }
-      },
       "filter": {
         "bool": {
           "must" : [
@@ -319,6 +318,30 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "size": 10
 }
 '
+```
+
+Post 2.0, cette requête est dépréciée,et on utilisera un élément `filter` sur une `query` `bool` : 
+
+```
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
+  "query" : {
+    "bool" : {
+      "filter": {
+        "bool": {
+          "must" : [
+            { "range": { "ipo.valuation_amount": { "gte": 1000000 } } },
+            { "term" : { "ipo.valuation_currency_code" : "USD" } }
+          ]
+        }
+      }
+    }
+  },
+  "sort" : [
+    { "ipo.valuation_amount" : { "order" : "desc" }}
+  ],
+  "fields" : [ "name", "ipo.valuation_amount", "ipo.valuation_currency_code" ],
+  "size": 10
+}
 ```
 
 
