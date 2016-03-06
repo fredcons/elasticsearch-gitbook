@@ -816,3 +816,54 @@ curl -XGET http://localhost:9200/my_index/_analyze?pretty&analyzer=french -d '{
 
 Le détail de cet `analyzer` se trouve [ici](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-lang-analyzer.html#french-analyzer)
 
+### Exercice 7.1
+
+Pour l'API `cat`, on passera systématiquement le paramètre `v` pour un maximum de lisibilité
+
+```
+curl http://localhost:9200/_cat/nodes?v
+host      ip        heap.percent ram.percent load node.role master name  
+10.0.2.15 10.0.2.15           14          70 0.33 d         *      Sleek 
+```
+
+### Exercice 7.2
+
+Sur le même modèle : 
+
+```
+curl http://localhost:9200/_cat/indices?v
+health status index      pri rep docs.count docs.deleted store.size pri.store.size 
+green  open   crunchbase   5   0      35488            0       53mb           53mb 
+yellow open   .kibana      1   1          1            0      3.1kb          3.1kb
+```
+
+### Exercice 7.3
+
+```
+curl -XGET 'http://localhost:9200/_cluster/health?pretty'
+```
+
+### Exercice 7.4
+
+```
+curl -XGET 'http://localhost:9200/_cluster/stats?pretty'
+curl -XGET 'http://localhost:9200/_nodes/stats?pretty'
+
+```
+
+### Exercice 7.5
+
+On va passer les paramètres désirés à l'API d'update d'index.  
+Ici, c'est le paramètre `number_of_replicas` qui nous intéresse : 
+
+```
+curl -XPUT 'localhost:9200/crunchbase/_settings' -d '
+{
+    "index" : {
+        "number_of_replicas" : 1
+    }
+}'
+```
+
+Immédiatement après, le statut de l'index devrait passer de `green` à `yellow`.
+
