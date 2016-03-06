@@ -10,7 +10,7 @@ Deux API existent pour interroger l'état du cluster
 
 ### L'API `cat`
 
-L'API [`cat`)(https://www.elastic.co/guide/en/elasticsearch/reference/current/cat.html) permet d'obtenir des informations non pas sous forme de JSON, mais sous forme tabluaire, donc plus compacte et plus simple à digérer.
+L'API [`cat`](https://www.elastic.co/guide/en/elasticsearch/reference/current/cat.html) permet d'obtenir des informations non pas sous forme de JSON, mais sous forme tabluaire, donc plus compacte et plus simple à digérer.
 
 #### Exercice 7.1
 
