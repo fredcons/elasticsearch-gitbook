@@ -50,8 +50,63 @@ Quel est l'effet sur la santé du cluster ?
 
 ## Sauvegardes
 
+Même si un index Elasticsearch est répliqué sur pluseurs machines, ces replica n'ont pas valeur de sauvegarde.  
+
+Elasticsearch propose à cet effet un mécanisme de `snapshot`, qui fonctionne en deux temps:
+- définition d'un repository, soit l'emplacement du stockage des snapshots. Cela peut être un empalcement disque, un emplacement HDFS, ou un bucket S3 ou Azure Cloud Storage
+- prise de snapshot via l'API (équivalent d'un export)
+
+Une fois un snapshot pris, on pourra le réimporter dans un index via la même API.
+
 
 ## Curator
+
+`curator` est l'outil officiel de la société Elastic pour administrer ses indices.  
+A la base prévu pour supprimer des indices sur la base de leur nom ou de leur timestamp, il a été étendu pour réaliser d'autres tâches (dont la gestion des alais et des snapshots.
+
+L'étendue des commandes disponibles est visible ci-dessous : 
+
+```
+curator
+Usage: curator [OPTIONS] COMMAND [ARGS]...
+
+  Curator for Elasticsearch indices.
+
+  See http://elastic.co/guide/en/elasticsearch/client/curator/current
+
+Options:
+  --host TEXT         Elasticsearch host.
+  --url_prefix TEXT   Elasticsearch http url prefix.
+  --port INTEGER      Elasticsearch port.
+  --use_ssl           Connect to Elasticsearch through SSL.
+  --certificate TEXT  Path to certificate to use for SSL validation.
+                      (OPTIONAL)
+  --ssl-no-validate   Do not validate SSL certificate
+  --http_auth TEXT    Use Basic Authentication ex: user:pass
+  --timeout INTEGER   Connection timeout in seconds.
+  --master-only       Only operate on elected master node.
+  --dry-run           Do not perform any changes.
+  --debug             Debug mode
+  --loglevel TEXT     Log level
+  --logfile TEXT      log file
+  --logformat TEXT    Log output format [default|logstash].
+  --quiet             Suppress command-line output.
+  --version           Show the version and exit.
+  --help              Show this message and exit.
+
+Commands:
+  alias       Index Aliasing
+  allocation  Index Allocation
+  bloom       Disable bloom filter cache
+  close       Close indices
+  delete      Delete indices or snapshots
+  open        Open indices
+  optimize    Optimize Indices
+  replicas    Replica Count Per-shard
+  seal        Seal indices (Synced flush: ES 1.6.0+ only)
+  show        Show indices or snapshots
+  snapshot    Take snapshots of indices (Backup)
+```
 
 
 
