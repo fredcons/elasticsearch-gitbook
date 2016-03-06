@@ -142,11 +142,12 @@ Voilà, le service est démarré, et on peut le constater en interrogeant le por
   },
   "tagline" : "You Know, for Search"
 }
-
-
 ```
 
 L'url racine nous donne donc des informations de base sur le serveur.
+
+Toutes les opérations HTTP passent, par défaut, par le port 9200.   
+Le port 9300 est réservé au protocole dit "Transport", en TCP, utilisé par les applications Java / JVM. 
 
 Toutes les actions que nous allons réaliser pendant ce hands-on utiliseront l'API HTTP.  
 La plupart des langages possèdent un SDK pour intégrer l'usage d'ElasticSearch dans du code client, mais tout est réalisable par HTTP : par souci de simplification, nous allons donc nous baser sur ce mode de communication.
