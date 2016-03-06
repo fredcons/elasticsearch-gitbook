@@ -45,7 +45,11 @@ Quel est l'effet sur la santé du cluster ?
 
 ## Alias
 
+Un alias dans Elasticsearch a deux fonctions : 
+- fournir un autre nom à un index existant. Cela peut-être utile pour avoir un point d'entrée unique pour les applications clientes, tout en changeant l'index effectivement rendu visible. Exemple : avoir un index /products qui pointe vers /products_20160317, puis vers /products_20160318, sans interrupton pour l'application cliente.
+- fournir une vue "filtrée" d'un index existant en ajoutant une contrainte dans sa définition. 
 
+[La documentation d'`alias`](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-aliases.html) fournit tous les détails de cette API indispensable.
 
 
 ## Sauvegardes
