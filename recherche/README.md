@@ -383,8 +383,8 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
 
 ### Scoring avancé
 
-On n'a fait que survoler la notion de score. Actuellement basé sur TFIDF, le socre par défaut sera bientôt calculé avec BM25.  
-Mais au-delà de ces formules basées sur la fréquence des termes dans les documents et le corpus entier, il est possible d'utiliser la valeur des champs des documents pour reclaclueer / influencer le score.  
+On n'a fait que survoler la notion de score. Actuellement basé sur TFIDF, le score par défaut sera bientôt calculé avec BM25.  
+Mais au-delà de ces formules basées sur la fréquence des termes dans les documents et le corpus entier, il est possible d'utiliser la valeur des champs des documents pour recalculer / influencer le score.  
 Des exemples possibles d'usage sont : 
 - favoriser les documents les plus récents dans un moteur de recherche d'articles de presse
 - favoriser les produits les plus vendus sur un site e-commerce 
