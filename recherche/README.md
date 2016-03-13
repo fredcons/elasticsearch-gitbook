@@ -333,6 +333,8 @@ Reprendre la requête 4.2, et demander à ES :
 - de la valider
 - de détailler la requête qu'il va exécuter
 
+
+
 ## Features additionnelles
 
 Outre la recherche "classique" par DSL, Elasticsearch fournit des fonctionalités annexes qu'il est bon de connaitre.
