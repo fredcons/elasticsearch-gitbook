@@ -53,6 +53,24 @@ Essayons d'abord d'indexer un document :
 
 Noter que la plupart des requêtes HTTP sont de la forme http://localhost:9200/{index_name}/{type_name}. Certaines se contentent du nom de l'index. 
 
+## Index inversé
+
+La structure utilisée par ES pour stocker ces données est ce qu'on appelle un index inversé : pour chacun des termes (ou valeurs) rencontrés dans l'index, on va stocker les documents dans lesquels il apparait : 
+
+Avec :
+- Doc1 = "Jetpack (latest generation)"
+- Doc2 = "Jetpack (previous generation)"
+
+On va obtenir l'index suivant: 
+
+| Terms         | doc1           | doc2  |
+| ------------- |:--------------:|:-----:|
+| Jetpack       | X              | X     |
+| latest        | X              |       |
+| previous      |                | X     |
+| generation    | X              | X     |
+
+
 
 Pour les exercices suivants, on pourra s'appuyer sur [cette page](http://www.elastic.co/guide/en/elasticsearch/guide/current/data-in-data-out.html).
 
