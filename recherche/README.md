@@ -327,6 +327,11 @@ Reprendre la requête 4.2 :
 - en ajoutant aux résultats des informations sur le temps d'exécution
 - en ajoutant un `highlight` en italique sur les résultats 
 
+#### Exercice 4.6 :
+
+Reprendre la requête 4.2, et demander à ES : 
+- de la valider
+- de détailler la requête qu'il va exécuter
 
 ## Features additionnelles
 
