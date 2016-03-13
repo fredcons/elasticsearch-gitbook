@@ -404,6 +404,23 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty=&explain= -
 }
 ```
 
+### Exercice 4.6
+
+On va utiliser l'endpoint `validate`, avec l'option `explain` : 
+
+```
+curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&explain= -d '{
+  "query" : {
+    "multi_match" : {
+      "query":    "innovation",
+      "fields": [ "name^1.2", "tag_list" ]
+    }
+  },
+  "fields" : [ "name", "tag_list" ],
+  "size": 10
+}'
+```
+
 ### Exercice 5.1
 
 Il existe deux agrégations pour des mesures statistiques : `stats` et `extended_stats`. `extended_stats` permet d'obtenir des mesures supplémentaires (variance par exemple).
