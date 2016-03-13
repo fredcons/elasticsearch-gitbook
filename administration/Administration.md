@@ -54,7 +54,7 @@ Un alias dans Elasticsearch a deux fonctions :
 
 ## Sauvegardes
 
-Même si un index Elasticsearch est répliqué sur pluseurs machines, ces replica n'ont pas valeur de sauvegarde.  
+Même si un index Elasticsearch est répliqué sur plusieurs machines, ces replica n'ont pas valeur de sauvegarde.  
 
 Elasticsearch propose à cet effet un mécanisme de `snapshot`, qui fonctionne en deux temps:
 - définition d'un repository, soit l'emplacement du stockage des snapshots. Cela peut être un empalcement disque, un emplacement HDFS, ou un bucket S3 ou Azure Cloud Storage
