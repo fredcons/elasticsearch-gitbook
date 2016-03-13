@@ -70,6 +70,7 @@ On va obtenir l'index suivant:
 | previous      |                | X     |
 | generation    | X              | X     |
 
+Cette structure rend donc aisée la rechercher par termes, et la combinaison de ces recherches.
 
 
 Pour les exercices suivants, on pourra s'appuyer sur [cette page](http://www.elastic.co/guide/en/elasticsearch/guide/current/data-in-data-out.html).
