@@ -1,6 +1,17 @@
 # Introduction à Elasticsearch
 
-Elasticsearch est un serveur de recherche textuelle basé sur la librairie Lucene.  
+Elasticsearch est un serveur de recherche textuelle basé sur la librairie Lucene. 
+
+Il est : 
+- orienté document
+- schemaless
+- distribué
+- API-centric
+
+Il permet : 
+- des recherches structurés
+- des recherches non-structurées
+- de combiner les deux
 
 Ce livre a pour but de présenter ce produit sous différents angles :
 - sous quelle forme se présente-t-il ?
