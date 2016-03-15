@@ -167,7 +167,6 @@ Pour les exercices suivants, on pourra s'appuyer sur [le guide du mapping](http:
 #### Exercice 3.9 :
 
 - J'ai dans mon mapping un champ "code" correspondant à un code produit (chaine de caractères), sur lequel réaliser une recherche exacte : comment le définir ?
-- J'ai dans mon mapping un champ numérique "count" utilisé pour trier, mais jamais utilisé à l'affichage : comment le définir ?
 
 
 
