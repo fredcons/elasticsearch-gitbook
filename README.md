@@ -9,7 +9,7 @@ Il est :
 - API-centric
 
 Il permet : 
-- des recherches structurés
+- des recherches structurées
 - des recherches non-structurées
 - de combiner les deux
 
