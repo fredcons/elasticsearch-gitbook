@@ -346,9 +346,13 @@ Reprendre la requête 4.2, et demander à ES :
 
 #### Exercice 4.7 : 
 
-Quelles sont les startups dont la description contient exactement la chaine `web scale` ?  
+Quelles sont les startups dont le champ `overview` contient exactement la chaine `web scale` ?  
 Comment ajouter de la tolérance au niveau des positions des termes ?
 
+
+#### Exercice 4.8 :
+
+On veut faire remonter Twitter lorsqu'un user tape `Twittre`, mais pas quand un user tape `tiwtter` : comment faire ?  
 
 
 ## Features additionnelles
