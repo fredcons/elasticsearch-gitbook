@@ -411,7 +411,7 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty=&explain= -
 On va utiliser l'endpoint `validate`, avec l'option `explain` : 
 
 ```
-curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty= -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&explain= -d '{
   "query" : {
     "multi_match" : {
       "query":    "innovation",
@@ -421,6 +421,7 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty= -d '{
   "fields" : [ "name", "tag_list" ],
   "size": 10
 }'
+
 ```
 
 ### Exercice 4.7
