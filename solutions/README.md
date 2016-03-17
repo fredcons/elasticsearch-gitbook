@@ -170,7 +170,7 @@ Pour des modifications lourdes, il faut donc :
 Il existe un endpoint spécial `_analyze` pour tester le résultat d'un analyzer (ici l'analyzer par défaut) :
 
 ```
-# curl -XPOST http://localhost:9200/store/products/_analyzer -d 'My Super-Product'
+# curl -XPOST http://localhost:9200/store/_analyzer -d 'My Super-Product'
 ```
 
 On peut également passer un paramètre "analyzer" pour spécifier un analyzer custom.
