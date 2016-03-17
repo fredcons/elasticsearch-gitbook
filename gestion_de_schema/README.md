@@ -162,11 +162,11 @@ Pour les exercices suivants, on pourra s'appuyer sur [le guide du mapping](http:
 
 #### Exercice 3.8 :
 
-- Afficher l'analyze que fait ES du champ "name"
+- J'ai dans mon mapping un champ "code" correspondant à un code produit (chaine de caractères), sur lequel réaliser une recherche exacte : comment le définir ?
 
 #### Exercice 3.9 :
 
-- J'ai dans mon mapping un champ "code" correspondant à un code produit (chaine de caractères), sur lequel réaliser une recherche exacte : comment le définir ?
+- Afficher l'analyze que fait ES du champ "name"
 
 
 
