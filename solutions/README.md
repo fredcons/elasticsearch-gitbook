@@ -167,6 +167,12 @@ Pour des modifications lourdes, il faut donc :
 
 ### Exercice 3.8
 
+Il faut le définir comme *not_analyzed* : il sera conservé tel quel.
+
+
+### Exercice 3.9
+
+
 Il existe un endpoint spécial `_analyze` pour tester le résultat d'un analyzer (ici l'analyzer par défaut) :
 
 ```
@@ -174,10 +180,6 @@ Il existe un endpoint spécial `_analyze` pour tester le résultat d'un analyzer
 ```
 
 On peut également passer un paramètre "analyzer" pour spécifier un analyzer custom.
-
-### Exercice 3.9
-
-Il faut le définir comme *not_analyzed* : il sera conservé tel quel.
 
 
 ### Exercice 4.1
