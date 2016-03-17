@@ -370,7 +370,7 @@ GET /crunchbase/companies/_search
 }
 ```
 
-Comment faire intervenir la taille de l'entreprise (champ `number_of_employees`) dans le score ? 
+Comment faire intervenir la taille de l'entreprise (champ `number_of_employees`) dans le calcul du score ? 
 
 
 ## Features additionnelles
