@@ -471,6 +471,32 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
 }'
 ```
 
+### Exercice 4.9
+
+On va utiliser une query [`function_score`](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-function-score-query.html), qui permet de faire intervenir des champs dans le calcul du score : 
+
+```
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
+ "query": {
+   "function_score": {
+     "query": {
+       "match_phrase": {
+         "overview" : "social network"
+       }   
+     },
+     "field_value_factor": {
+       "field" : "number_of_employees",
+       "factor": 1, 
+       "modifier" : "none",
+       "missing": 1
+     }
+   }
+ },
+ "fields" : [ "name", "overview", "number_of_employees"]
+} 
+'
+```
+
 ### Exercice 5.1
 
 Il existe deux agrégations pour des mesures statistiques : `stats` et `extended_stats`. `extended_stats` permet d'obtenir des mesures supplémentaires (variance par exemple).
