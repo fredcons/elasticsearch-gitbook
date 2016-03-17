@@ -411,7 +411,7 @@ curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty=&explain= -
 On va utiliser l'endpoint `validate`, avec l'option `explain` : 
 
 ```
-curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&explain= -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty= -d '{
   "query" : {
     "multi_match" : {
       "query":    "innovation",
@@ -425,10 +425,10 @@ curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&ex
 
 ### Exercice 4.7
 
-On va utiliser laa requête `match_query`, d'abord brute : 
+On va utiliser la requête `match_query`, d'abord brute : 
 
 ```
-curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&explain= -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "query": {
     "match_phrase": {
       "overview": "web scale"
@@ -440,7 +440,7 @@ curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&ex
 puis avec un paramètre `slop` pour introduire une notion de proximité entre termes : 
 
 ```
-curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&explain= -d '{
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
   "query": {
     "match_phrase": {
       "overview": {
@@ -449,6 +449,25 @@ curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&ex
       }
     }
   }
+}'
+```
+
+### Exercice 4.8
+
+On va utiliser une query `fuzzy`, qui va introduire une certaine tolérance à la frappe : 
+
+```
+curl -XGET http://localhost:9200/crunchbase/companies/_search?pretty -d '{
+ "query": {
+   "fuzzy": {
+     "name" : {
+        "value" :         "twittre",
+        "fuzziness" :     1,
+        "prefix_length" : 4
+      }
+   }
+ },
+ "fields" : [ "name"]
 }'
 ```
 
