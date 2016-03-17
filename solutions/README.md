@@ -423,6 +423,35 @@ curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&ex
 }'
 ```
 
+### Exercice 4.7
+
+On va utiliser laa requête `match_query`, d'abord brute : 
+
+```
+curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&explain= -d '{
+  "query": {
+    "match_phrase": {
+      "overview": "web scale"
+    }
+  }
+}'
+```
+
+puis avec un paramètre `slop` pour introduire une notion de proximité entre termes : 
+
+```
+curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&explain= -d '{
+  "query": {
+    "match_phrase": {
+      "overview": {
+        "query": "web scale",
+        "slop":  10
+      }
+    }
+  }
+}'
+```
+
 ### Exercice 5.1
 
 Il existe deux agrégations pour des mesures statistiques : `stats` et `extended_stats`. `extended_stats` permet d'obtenir des mesures supplémentaires (variance par exemple).
