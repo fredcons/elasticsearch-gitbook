@@ -294,6 +294,16 @@ Cette réponse contient donc :
 - des metadata pour la requête : temps d'exécution en millisecondes, nombre de hits, nombre de shards interrogés
 - une liste de résultats (par défaut : 10) avec les champs spécifiés (par défaut: tous)  dans l'ordre spécifié (par défaut: score descendant)
 
+## Scoring
+
+Lors d'une recherche par filtre, un document correspond ou non à cette recherche : le résultat est binaire. Mais pour une recherche textuelle, un document peut _plus ou moins_ correspondre  à cette recherche : ES va donc procéder à un calcul de similarité (ou _scoring_) entre ce document et la requête.  
+Ce scoring s'appuie sur : 
+- TF, ou Term Frequency : combien de fois le terme cherché apparait-il dans lae document ?
+- IDF, ou Inverse Document Frequency : le terme cherché est-il rare ou fréquent dans le corpus ? 
+- norm : quelle est l'importance du terme par rapport à la longueur du texte ? 
+- boost : quelle importance donne-t-on à la query ?
+
+
 ## Exercices
 
 Pour les questions suivantes, on pourra s'appuyer sur :
