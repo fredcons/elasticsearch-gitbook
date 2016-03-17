@@ -417,9 +417,7 @@ curl -XGET http://localhost:9200/crunchbase/companies/_validate/query?pretty=&ex
       "query":    "innovation",
       "fields": [ "name^1.2", "tag_list" ]
     }
-  },
-  "fields" : [ "name", "tag_list" ],
-  "size": 10
+  }
 }'
 
 ```
