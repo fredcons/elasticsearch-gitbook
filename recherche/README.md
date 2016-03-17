@@ -354,6 +354,24 @@ Comment ajouter de la tolérance au niveau des positions des termes ?
 
 On veut faire remonter Twitter lorsqu'un user tape `Twittre`, mais pas quand un user tape `tiwtter` : comment faire ?  
 
+#### Exercice 4.9 :
+
+Lorsqu'on cherche `social network` via un `match_phrase` sur le champ `overview`, les premiers résultats sont des sociétes mineures : 
+
+```
+GET /crunchbase/companies/_search
+{
+ "query": {
+   "match_phrase": {
+     "overview" : "social network"
+   }   
+ },
+ "fields" : [ "name", "overview", "number_of_employees"]
+}
+```
+
+Comment faire intervenir la taille de l'entreprise (champ `number_of_employees`) dans le score ? 
+
 
 ## Features additionnelles
 
