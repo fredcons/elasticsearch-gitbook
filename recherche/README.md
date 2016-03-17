@@ -344,6 +344,12 @@ Reprendre la requête 4.2, et demander à ES :
 - de détailler la requête qu'il va exécuter
 
 
+#### Exercice 4.7 : 
+
+Quelles sont les startups dont la description contient exactement la chaine `web scale` ?  
+Comment ajouter de la tolérance au niveau des positions des termes ?
+
+
 
 ## Features additionnelles
 
