@@ -174,30 +174,37 @@ On peut ensuite référencer cet `analyzer` sur un champ du schéma :
 
 On va tâcher de créer un `analyzer` en vue d'obtenir des chaines de caractères spécifiques.
 
-Le modèle de création d'`analyzer` sera le suivant : 
+On va utiliser dans sense les trois requêtes suivantes pour itérer sur le schéma: 
 
 ```
-curl -XPUT http://localhost:9200/my_index -d '
+DELETE my_index
+{  
+}
+
+PUT my_index
 {
   "settings" : {
-    "number_of_shards"   : 5,
-    "number_of_replicas" : 0,
     "analysis" : {
       "filter" : {
-        
+
       },
       "tokenizer" : {
-        
+
       },
       "analyzer" : {
         "my_analyzer" : {
-        
+
         }
       }
     }
   }    
 }    
-'
+
+POST my_index/_analyze
+{
+  "analyzer" : "...",
+  "text" : "Ivre, il achète une imprimante HP-AB28"
+}
 ```
 
 #### Exercice 6.1
