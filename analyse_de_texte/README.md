@@ -413,13 +413,6 @@ curl http://localhost:9200/my_index/_analyze?pretty&analyzer=my_analyzer -d "Ivr
       "position": 2
     },
     {
-      "token": "une",
-      "start_offset": 16,
-      "end_offset": 19,
-      "type": "word",
-      "position": 3
-    },
-    {
       "token": "imprimante",
       "start_offset": 20,
       "end_offset": 30,

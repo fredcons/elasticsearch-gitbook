@@ -737,7 +737,7 @@ On va ajouter un `filter` `stopwords`, et un `filter` `keyword_marker`, chacun a
           "filter" : [
             "lowercase",
             "word_delimiter",
-            "stop",
+            "my_stop",
             "asciifolding",
             "my_protected_words",
             "my_french_stemmer"
